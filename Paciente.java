@@ -1,4 +1,4 @@
-public class Paciente extends Pessoas {
+public class Paciente extends Pessoa {
 	//revisar o tipo de dado;
 	private byte estadoCivil;
 	private String dataNascimento;
@@ -10,7 +10,6 @@ public class Paciente extends Pessoas {
 	public String getEstadoCivil() {
 		if(estadoCivil == 0)
 			return "solteiro";
-		
 		else if(estadoCivil == 1)
 			return "casado";
 		else 
