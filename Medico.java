@@ -1,20 +1,86 @@
 
+import java.util.ArrayList;
+
 public class Medico extends Funcionario {
 	private String CRM;
-	//revisar data type
-	private String especialidades;
+	//Resolvi implementar um arraylist para nao limitar inicialmente a quantidade de especialidades que podemos colocar pra um medico e tambem pra ficar mais facil de manipular.
+	private ArrayList<String> especialidades = new ArrayList<>();
 	private int nroConsultas;
 	//revisar valorConsulta(paciente com plano e sem plano ?)
 	private float valorConsulta;
+	//Resolvi implementar um arraylist para nao limitar inicialmente a quantidade de planos que podemos colocar pra um medico e tambem pra ficar mais facil de manipular.
+	private ArrayList<PlanodeSaude> planosAtendidos = new ArrayList<>();
 
-	//Construtor default, sem parâmetros
-	public Medico(){
-		super();
-		this.CRM = " ";
-		this.especialidades = " ";
-		this.nroConsultas = 0;
-		this.valorConsulta = 0;
+	public String getCRM() {
+		return CRM;
+	}
+	public ArrayList<String> getEspecialidades() {
+		return especialidades;
+	}
+	public int getNroConsultas() {
+		return nroConsultas;
+	}
+	public float getValorConsulta() {
+		return valorConsulta;
+	}
+	public ArrayList<PlanodeSaude> getPlanosAtendidos() {
+		return planosAtendidos;
+	}
+	public void setCRM(String CRM) {
+		this.CRM = CRM;
+	}
+	public void setEspecialidades(ArrayList<String> especialidades) {
+		this.especialidades = especialidades;
+	}
+	public void setValorConsulta(float valorConsulta) {
+		this.valorConsulta = valorConsulta;
+	}
+	public void setNroConsultas(int nroConsultas) {
+		this.nroConsultas = nroConsultas;
+	}
+	public void setPlanosAtendidos(ArrayList<PlanodeSaude> planosAtendidos) {
+		this.planosAtendidos = planosAtendidos;
+	}
+	//Metodo pra adicionar mais um plano de saude no arraylist.
+	public void adicionarNovoPlano(PlanodeSaude plano){
+		this.planosAtendidos.add(plano);
+	}
+	//Metodo pra adicionar mais uma especialidade no arraylist.
+	public void adicionarEspecialidade(String especialidade){
+		this.especialidades.add(especialidade);
 	}
 
+	public Medico (String nome, String cpf, String rg, String sexo, String dtAdClinica, int nroCarTrabalho, String usuario,
+	String senha, String CRM, ArrayList<String> especialidades, int nroConsultas, float valorConsulta, ArrayList<PlanodeSaude> planosAtendidos){
+		super(nome, cpf, rg, sexo, dtAdClinica, nroCarTrabalho, usuario, senha);
+		setCRM(CRM);
+		setEspecialidades(especialidades);
+		setNroConsultas(nroConsultas);
+		setValorConsulta(valorConsulta);
+		setPlanosAtendidos(planosAtendidos);
+	}
+
+	//Construtor apenas com cpf e os planos atendidos
+	public Medico (String cpf, ArrayList<PlanodeSaude> planosAtendidos){
+		super(" ", cpf, " ", " ", " ", 0, " ", " ");
+		setCRM(" ");
+		ArrayList<String> especialidadesVazio = new ArrayList<>();
+		setEspecialidades(especialidadesVazio);
+		setNroConsultas(0);
+		setValorConsulta(0);
+		setPlanosAtendidos(planosAtendidos);
+	}
+
+	//Construtor default
+	public Medico(){
+		super(" ", " ", " ", " ", " ", 0, " ", " ");
+		setCRM(" ");
+		ArrayList<String> especialidadesVazio = new ArrayList<>();
+		setEspecialidades(especialidadesVazio);
+		setNroConsultas(0);
+		setValorConsulta(0);
+		ArrayList<PlanodeSaude> planodeSaudesVazio = new ArrayList<>();
+		setPlanosAtendidos(planodeSaudesVazio);
+	}
 
 }

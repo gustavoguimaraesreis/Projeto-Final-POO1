@@ -1,4 +1,4 @@
-public class Paciente extends Pessoa {
+public class Paciente extends Pessoas {
 	//revisar o tipo de dado;
 	private byte estadoCivil;
 	private String dataNascimento;
@@ -45,5 +45,12 @@ public class Paciente extends Pessoa {
 		this.ultimaConsulta = ultimaConsulta;
 	}
 	
-	
+	public Paciente(String nome, String cpf, String rg, String sexo, String estadoCivil,
+	String dtNascimento, String dtCadastro, String UltimaConsulta) {
+		super(nome, cpf, rg, sexo);
+		setEstadoCivil(estadoCivil);
+		setDataNascimento(dtNascimento);
+		setDataCadastro(dtCadastro);
+		setUltimaConsulta(UltimaConsulta);
+	}
 }
