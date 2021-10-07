@@ -1,5 +1,5 @@
 
-public class Funcionario extends Pessoas {
+public abstract class Funcionario extends Pessoas {
 	private String dataAdmissaoClinica;
 	private int nroCarteiraTrabalho;
 	private String usuario;
@@ -45,5 +45,8 @@ public class Funcionario extends Pessoas {
 		setUsuario(usuario);
 		setSenha(senha);
 	}
+	
+	//Método abstrato (parte 5, letra b)
+	public abstract float calcularSalario();
 	
 }

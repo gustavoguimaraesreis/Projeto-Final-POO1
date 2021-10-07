@@ -23,7 +23,6 @@ public class Pessoas {
 		
 		//iniciando o algorítmo de validação:
 		int[] cpfInt = new int[11];
-		int j = 0;
 		int validação1 = 0, validação2 = 0;
 		int aux1 = 10, aux2 = 11;
 		for(int i = 0; i < cpf.length(); i++) {
@@ -31,7 +30,6 @@ public class Pessoas {
 			/* cpfInt[i] = (int) cpf.charAt(i); */
 				cpfInt[i] = Character.getNumericValue(cpf.charAt(i));
 				System.out.println("cpfInt: " + cpfInt[i]);
-				j++;
 			
 		}
 		//Validando o primeiro dígito:

@@ -6,8 +6,13 @@ public class Consulta {
 	private String obsGeral;
 	private String receitaMedica;
 	private int metaConsultasMensais;
+	//não entendi esses atributos:
 	private Paciente paciente;
 	private Medico medico;
+
+	//atributos estáticos: (parte3, letra e)
+	private static int nroConsultas;
+	private static int limiteConsultas;
 
 	public void setData(String data) {
 		this.data = data;
@@ -27,11 +32,19 @@ public class Consulta {
 	public void setReceitaMedica(String receitaMedica) {
 		this.receitaMedica = receitaMedica;
 	}
+	////
 	public void setPaciente(Paciente paciente) {
 		this.paciente = paciente;
 	}
 	public void setMedico(Medico medico) {
 		this.medico = medico;
+	}
+	/////
+	public static void setNroConsultas(int nroConsultas) {
+		Consulta.nroConsultas = nroConsultas;
+	}
+	public static void setLimiteConsultas(int limiteConsultas) {
+		Consulta.limiteConsultas = limiteConsultas;
 	}
 	public String getData() {
 		return data;
@@ -51,11 +64,21 @@ public class Consulta {
 	public String getReceitaMedica() {
 		return receitaMedica;
 	}
+	////Obs: revisar esses métodos:
 	public Paciente getPaciente() {
 		return paciente;
 	}
 	public Medico getMedico() {
 		return medico;
+	}
+	/////
+
+	public static int getNroConsultas() {
+		return nroConsultas;
+	}
+
+	public static int getLimiteConsultas() {
+		return limiteConsultas;
 	}
 
 	public Consulta (String data, String horario, String medicamentosPaciente, String obsGeral,
@@ -74,6 +97,11 @@ public class Consulta {
 		setPaciente(paciente);
 		setMedico(medico);
 	}
+	//Método ->(Parte 3, letra d):
+	public void ZerarNroConsultas() {
+		setNroConsultas(0);
+	}
+
 
 
 }

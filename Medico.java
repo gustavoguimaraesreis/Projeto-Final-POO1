@@ -6,10 +6,14 @@ public class Medico extends Funcionario {
 	//Resolvi implementar um arraylist para nao limitar inicialmente a quantidade de especialidades que podemos colocar pra um medico e tambem pra ficar mais facil de manipular.
 	private ArrayList<String> especialidades = new ArrayList<>();
 	private int nroConsultas;
-	//revisar valorConsulta(paciente com plano e sem plano ?)
-	private float valorConsulta;
+	//
+	private float valorConsulta_privado;
+	private float valorConsulta_plano;
 	//Resolvi implementar um arraylist para nao limitar inicialmente a quantidade de planos que podemos colocar pra um medico e tambem pra ficar mais facil de manipular.
 	private ArrayList<PlanodeSaude> planosAtendidos = new ArrayList<>();
+
+	//parte 3, letra h:
+	private float SomaConsultasMes;
 
 	public String getCRM() {
 		return CRM;
@@ -20,26 +24,44 @@ public class Medico extends Funcionario {
 	public int getNroConsultas() {
 		return nroConsultas;
 	}
-	public float getValorConsulta() {
-		return valorConsulta;
+	public float getValorConsulta_privado() {
+		return valorConsulta_privado;
+	}
+	public float getValorConsulta_plano() {
+		return valorConsulta_plano;
 	}
 	public ArrayList<PlanodeSaude> getPlanosAtendidos() {
 		return planosAtendidos;
 	}
+	public float getSomaConsultasMes() {
+		return SomaConsultasMes;
+	}
+
 	public void setCRM(String CRM) {
 		this.CRM = CRM;
 	}
 	public void setEspecialidades(ArrayList<String> especialidades) {
 		this.especialidades = especialidades;
 	}
-	public void setValorConsulta(float valorConsulta) {
-		this.valorConsulta = valorConsulta;
+	public void setValorConsulta_privado(float valorConsulta) {
+		this.valorConsulta_privado = valorConsulta;
+	}
+	public void setValorConsulta_plano(float valorConsulta) {
+		this.valorConsulta_plano = valorConsulta;
 	}
 	public void setNroConsultas(int nroConsultas) {
 		this.nroConsultas = nroConsultas;
 	}
 	public void setPlanosAtendidos(ArrayList<PlanodeSaude> planosAtendidos) {
 		this.planosAtendidos = planosAtendidos;
+	}
+	public void setSomaConsultasMes(Consulta consulta) {
+		if(consulta.getPaciente() instanceof PacienteComPlano) {
+			SomaConsultasMes += getValorConsulta_plano();
+		}
+		else {
+			SomaConsultasMes += getValorConsulta_privado();
+		}
 	}
 	//Metodo pra adicionar mais um plano de saude no arraylist.
 	public void adicionarNovoPlano(PlanodeSaude plano){
@@ -51,12 +73,13 @@ public class Medico extends Funcionario {
 	}
 
 	public Medico (String nome, String cpf, String rg, String sexo, String dtAdClinica, int nroCarTrabalho, String usuario,
-	String senha, String CRM, ArrayList<String> especialidades, int nroConsultas, float valorConsulta, ArrayList<PlanodeSaude> planosAtendidos){
+	String senha, String CRM, ArrayList<String> especialidades, int nroConsultas, float valorConsulta_privado, float valorConsulta_plano, ArrayList<PlanodeSaude> planosAtendidos){
 		super(nome, cpf, rg, sexo, dtAdClinica, nroCarTrabalho, usuario, senha);
 		setCRM(CRM);
 		setEspecialidades(especialidades);
 		setNroConsultas(nroConsultas);
-		setValorConsulta(valorConsulta);
+		setValorConsulta_privado(valorConsulta_privado);
+		setValorConsulta_plano(valorConsulta_plano);
 		setPlanosAtendidos(planosAtendidos);
 	}
 
@@ -67,7 +90,8 @@ public class Medico extends Funcionario {
 		ArrayList<String> especialidadesVazio = new ArrayList<>();
 		setEspecialidades(especialidadesVazio);
 		setNroConsultas(0);
-		setValorConsulta(0);
+		setValorConsulta_privado(0);
+		setValorConsulta_plano(0);
 		setPlanosAtendidos(planosAtendidos);
 	}
 
@@ -78,9 +102,16 @@ public class Medico extends Funcionario {
 		ArrayList<String> especialidadesVazio = new ArrayList<>();
 		setEspecialidades(especialidadesVazio);
 		setNroConsultas(0);
-		setValorConsulta(0);
+		setValorConsulta_privado(0);
+		setValorConsulta_plano(0);
 		ArrayList<PlanodeSaude> planodeSaudesVazio = new ArrayList<>();
 		setPlanosAtendidos(planodeSaudesVazio);
 	}
-
+	public float calcularSalario() {
+		return getSomaConsultasMes();
+	}
+	//parte 3, letra h:
+	public void ZerarConsultasMes() {
+		this.SomaConsultasMes = 0.00f;
+	}
 }

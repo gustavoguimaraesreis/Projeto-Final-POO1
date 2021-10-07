@@ -1,12 +1,10 @@
 public class Paciente extends Pessoas {
-	//revisar o tipo de dado;
 	private byte estadoCivil;
 	private String dataNascimento;
 	private String dataCadastro;
 	private String ultimaConsulta;
 	
 	
-///////Problema do estado civil:
 	public String getEstadoCivil() {
 		if(estadoCivil == 0)
 			return "solteiro";
@@ -24,7 +22,6 @@ public class Paciente extends Pessoas {
 		else
 			this.estadoCivil = 2;
 	}
-////////////////	
 		
 	public String getDataNascimento() {
 		return dataNascimento;
