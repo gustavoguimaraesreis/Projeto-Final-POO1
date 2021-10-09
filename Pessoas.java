@@ -1,9 +1,11 @@
+
 public class Pessoas {
 	private String nome;
 	private String CPF;
 	private String RG;
 	private String sexo;
-	
+	private Endereco endereco;
+
 	//Setters e Getters
 	public String getNome() {
 		return nome;
@@ -14,9 +16,13 @@ public class Pessoas {
 	public String getCPF() {
 		return CPF;
 	}
+	public Endereco getEndereco() {
+		return endereco;
+	}
+
 	public boolean setCPF(String cpf) {
 		
-		//invalidando possibilidades que passam no algorítmo, porém na realidade, não são válidos:
+		//invalidando possibilidades que passam no algorítmo, porém, na realidade, não são válidos:
 		if(cpf == "11111111111" || cpf == "22222222222" || cpf == "33333333333" || cpf == "44444444444" || cpf == "55555555555" || cpf == "66666666666" ||
 			cpf == "77777777777" || cpf == "88888888888" || cpf == "99999999999")
 			return false;
@@ -75,7 +81,10 @@ public class Pessoas {
 	public void setSexo(String sexo) {
 		this.sexo = sexo;
 	}
-	
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
+	}
+
 	public Pessoas(String nome, String cpf, String rg, String sexo) {
 		setNome(nome);
 		if(setCPF(cpf) == false) 

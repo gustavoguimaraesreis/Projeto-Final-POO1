@@ -3,14 +3,12 @@ import java.util.ArrayList;
 
 public class Medico extends Funcionario {
 	private String CRM;
-	//Resolvi implementar um arraylist para nao limitar inicialmente a quantidade de especialidades que podemos colocar pra um medico e tambem pra ficar mais facil de manipular.
-	private ArrayList<String> especialidades = new ArrayList<>();
+	private ArrayList<String> especialidades = new ArrayList<String>();
 	private int nroConsultas;
-	//
+
 	private float valorConsulta_privado;
 	private float valorConsulta_plano;
-	//Resolvi implementar um arraylist para nao limitar inicialmente a quantidade de planos que podemos colocar pra um medico e tambem pra ficar mais facil de manipular.
-	private ArrayList<PlanodeSaude> planosAtendidos = new ArrayList<>();
+	private ArrayList<PlanodeSaude> planosAtendidos = new ArrayList<PlanodeSaude>();
 
 	//parte 3, letra h:
 	private float SomaConsultasMes;
@@ -87,7 +85,7 @@ public class Medico extends Funcionario {
 	public Medico (String cpf, ArrayList<PlanodeSaude> planosAtendidos){
 		super(" ", cpf, " ", " ", " ", 0, " ", " ");
 		setCRM(" ");
-		ArrayList<String> especialidadesVazio = new ArrayList<>();
+		ArrayList<String> especialidadesVazio = new ArrayList<String>();
 		setEspecialidades(especialidadesVazio);
 		setNroConsultas(0);
 		setValorConsulta_privado(0);
@@ -99,12 +97,12 @@ public class Medico extends Funcionario {
 	public Medico(){
 		super(" ", " ", " ", " ", " ", 0, " ", " ");
 		setCRM(" ");
-		ArrayList<String> especialidadesVazio = new ArrayList<>();
+		ArrayList<String> especialidadesVazio = new ArrayList<String>();
 		setEspecialidades(especialidadesVazio);
 		setNroConsultas(0);
 		setValorConsulta_privado(0);
 		setValorConsulta_plano(0);
-		ArrayList<PlanodeSaude> planodeSaudesVazio = new ArrayList<>();
+		ArrayList<PlanodeSaude> planodeSaudesVazio = new ArrayList<PlanodeSaude>();
 		setPlanosAtendidos(planodeSaudesVazio);
 	}
 	public float calcularSalario() {

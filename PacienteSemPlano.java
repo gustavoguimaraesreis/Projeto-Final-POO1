@@ -17,8 +17,8 @@ public class PacienteSemPlano extends Paciente{
 	}
 
 	public PacienteSemPlano (String nome, String cpf, String rg, String sexo, String estadoCivil, String dtNascimento,
-	String dtCadastro, String UltimaConsulta, String possuiDesconto, float valorUltimaConsulta){
-		super(nome, cpf, rg, sexo, estadoCivil, dtNascimento, dtCadastro, UltimaConsulta);
+	String dtCadastro, String dataUltimaConsulta, String possuiDesconto, float valorUltimaConsulta){
+		super(nome, cpf, rg, sexo, estadoCivil, dtNascimento, dtCadastro, dataUltimaConsulta);
 		setValorUltimaConsulta(valorUltimaConsulta);
 		setPossuiDesconto(possuiDesconto);
 	}

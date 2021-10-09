@@ -2,8 +2,7 @@ public class Paciente extends Pessoas {
 	private byte estadoCivil;
 	private String dataNascimento;
 	private String dataCadastro;
-	private String ultimaConsulta;
-	
+	private String dataUltimaConsulta;
 	
 	public String getEstadoCivil() {
 		if(estadoCivil == 0)
@@ -36,18 +35,18 @@ public class Paciente extends Pessoas {
 		this.dataCadastro = dataCadastro;
 	}
 	public String getUltimaConsulta() {
-		return ultimaConsulta;
+		return dataUltimaConsulta;
 	}
-	public void setUltimaConsulta(String ultimaConsulta) {
-		this.ultimaConsulta = ultimaConsulta;
+	public void setUltimaConsulta(String dataUltimaConsulta) {
+		this.dataUltimaConsulta = dataUltimaConsulta;
 	}
 	
 	public Paciente(String nome, String cpf, String rg, String sexo, String estadoCivil,
-	String dtNascimento, String dtCadastro, String UltimaConsulta) {
+	String dtNascimento, String dtCadastro, String dataUltimaConsulta) {
 		super(nome, cpf, rg, sexo);
 		setEstadoCivil(estadoCivil);
 		setDataNascimento(dtNascimento);
 		setDataCadastro(dtCadastro);
-		setUltimaConsulta(UltimaConsulta);
+		setUltimaConsulta(dataUltimaConsulta);
 	}
 }
