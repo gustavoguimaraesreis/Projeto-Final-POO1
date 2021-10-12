@@ -22,5 +22,4 @@ public class PacienteSemPlano extends Paciente{
 		setValorUltimaConsulta(valorUltimaConsulta);
 		setPossuiDesconto(possuiDesconto);
 	}
-
 }

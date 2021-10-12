@@ -7,7 +7,6 @@ public class Consulta {
 	private String obsGeral;
 	private String receitaMedica;
 	private int metaConsultasMensais;
-
 	private Paciente paciente;
 	private Medico medico;
 	private DemaisFuncionarios funcionarioAgendou;
@@ -114,5 +113,16 @@ public class Consulta {
 	//Método ->(Parte 3, letra d):
 	public void ZerarNroConsultas() {
 		setNroConsultas(0);
+	}
+
+	//Parte 4
+	public void realizarConsulta(){
+		//Medico
+		this.medico.setNroConsultas((this.medico.getNroConsultas())+1);
+		this.medico.setSomaConsultasMes(this);
+		//Paciente
+		this.paciente.setDataUltimaConsulta(this.data);
+		//Demais
+		Consulta.nroConsultas++;
 	}
 }

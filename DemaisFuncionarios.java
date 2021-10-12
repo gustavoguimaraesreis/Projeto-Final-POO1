@@ -2,6 +2,8 @@
 public class DemaisFuncionarios extends Funcionario{
 	private float salarioBase;
 	private String cargo;
+
+	//atributo estático -> (parte3, letra f):
 	private static float gratificacao;
 	
 	public void setSalarioBase(float salarioBase) {
@@ -10,8 +12,9 @@ public class DemaisFuncionarios extends Funcionario{
 	public void setCargo(String cargo) {
 		this.cargo = cargo;
 	}
+
+	///Parte 3, letra g:
 	public static boolean setGratificacao(float gratificacao) {
-	
 		if(Consulta.getNroConsultas() >= Consulta.getLimiteConsultas()) {
 			DemaisFuncionarios.gratificacao = gratificacao;
 			return true;
@@ -39,6 +42,7 @@ public class DemaisFuncionarios extends Funcionario{
 		setSalarioBase(salarioBase);
 	}
 
+	//parte 3, letra i:
 	public float calcularSalario() {
 		return salarioBase + gratificacao;
 	}

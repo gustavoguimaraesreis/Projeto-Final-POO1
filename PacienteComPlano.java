@@ -4,7 +4,7 @@ public class PacienteComPlano extends Paciente {
 	private int nroCarteirinha;
 	private String dataIngressoPlano;
 	private boolean periodoCarencia;
-	//Adicionei esse metodo pois um paciente com plano de saude pode ter um ou mais planos.
+	//Adicionei esse atributo pois um paciente com plano de saude pode ter um ou mais planos.
 	private ArrayList<PlanodeSaude> planosPossuidos = new ArrayList<PlanodeSaude>();
 
 	public void setNroCarteirinha(int nroCarteirinha) {

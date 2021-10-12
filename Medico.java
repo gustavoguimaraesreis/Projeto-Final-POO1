@@ -5,7 +5,6 @@ public class Medico extends Funcionario {
 	private String CRM;
 	private ArrayList<String> especialidades = new ArrayList<String>();
 	private int nroConsultas;
-
 	private float valorConsulta_privado;
 	private float valorConsulta_plano;
 	private ArrayList<PlanodeSaude> planosAtendidos = new ArrayList<PlanodeSaude>();
@@ -34,7 +33,6 @@ public class Medico extends Funcionario {
 	public float getSomaConsultasMes() {
 		return SomaConsultasMes;
 	}
-
 	public void setCRM(String CRM) {
 		this.CRM = CRM;
 	}
@@ -70,8 +68,8 @@ public class Medico extends Funcionario {
 		this.especialidades.add(especialidade);
 	}
 
-	public Medico (String nome, String cpf, String rg, String sexo, String dtAdClinica, int nroCarTrabalho, String usuario,
-	String senha, String CRM, ArrayList<String> especialidades, int nroConsultas, float valorConsulta_privado, float valorConsulta_plano, ArrayList<PlanodeSaude> planosAtendidos){
+	public Medico (String nome, String cpf, String rg, String sexo, String dtAdClinica, int nroCarTrabalho, String usuario, String senha,
+	String CRM, ArrayList<String> especialidades, int nroConsultas, float valorConsulta_privado, float valorConsulta_plano, ArrayList<PlanodeSaude> planosAtendidos){
 		super(nome, cpf, rg, sexo, dtAdClinica, nroCarTrabalho, usuario, senha);
 		setCRM(CRM);
 		setEspecialidades(especialidades);

@@ -1,3 +1,4 @@
+
 public class Paciente extends Pessoas {
 	private byte estadoCivil;
 	private String dataNascimento;
@@ -34,10 +35,10 @@ public class Paciente extends Pessoas {
 	public void setDataCadastro(String dataCadastro) {
 		this.dataCadastro = dataCadastro;
 	}
-	public String getUltimaConsulta() {
+	public String getDataUltimaConsulta() {
 		return dataUltimaConsulta;
 	}
-	public void setUltimaConsulta(String dataUltimaConsulta) {
+	public void setDataUltimaConsulta(String dataUltimaConsulta) {
 		this.dataUltimaConsulta = dataUltimaConsulta;
 	}
 	
@@ -47,6 +48,6 @@ public class Paciente extends Pessoas {
 		setEstadoCivil(estadoCivil);
 		setDataNascimento(dtNascimento);
 		setDataCadastro(dtCadastro);
-		setUltimaConsulta(dataUltimaConsulta);
+		setDataUltimaConsulta(dataUltimaConsulta);
 	}
 }
