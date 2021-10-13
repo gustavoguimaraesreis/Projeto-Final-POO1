@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.io.Serializable;
 
-public class Consulta implements Serializable{
+public class Consulta implements Mostrar, Serializable{
 	private String data;
 	private String horario;
 	private String medicamentosPaciente;

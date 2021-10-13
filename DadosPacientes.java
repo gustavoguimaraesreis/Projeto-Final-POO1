@@ -1,19 +1,19 @@
 import java.util.ArrayList;
 
 public class DadosPacientes {
-    private ArrayList<Paciente> pacientes = new ArrayList<Paciente>();
+    private static ArrayList<Paciente> pacientes = new ArrayList<Paciente>();
 
-    public void cadastrar(Paciente p){
-        this.pacientes.add(p);
+    public static void cadastrar(Paciente p){
+        pacientes.add(p);
         System.out.println("Total de pacientes: ");
-        System.out.println(this.pacientes.size());
+        System.out.println(pacientes.size());
     }
 
-    public void listar(){
+    public static void listar(){
         for(int i=0; i<pacientes.size(); i++) pacientes.get(i).mostrarDados;
     }
 
-    public Paciente buscar(String CPF){
+    public static Paciente buscar(String CPF){
         for(int i=0; i<pacientes.size(); i++)
             if(pacientes.get(i).getCPF().equals(CPF))
                 return pacientes.get(i);
@@ -21,7 +21,7 @@ public class DadosPacientes {
         return null;
     }
 
-    public boolean excluir(String CPF){
+    public static boolean excluir(String CPF){
         for(int i=0; i<pacientes.size(); i++){
             if(pacientes.get(i).getCPF().equals(CPF)){
                 pacientes.remove(i);
@@ -31,7 +31,7 @@ public class DadosPacientes {
         return false;
     }
 
-    public void gravar(){
+    public static void gravar(){
         boolean r = Persistency.gravar(pacientes, "C:\\Users\\gcbsa\\OneDrive\\Documents\\College\\3° Período\\POO1\\Projeto Final\\Coding\\pacientes.dat");
     }
 }

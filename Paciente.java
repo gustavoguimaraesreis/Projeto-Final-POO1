@@ -1,8 +1,7 @@
 import java.io.Serializable;
 
-public class Paciente extends Pessoas implements Serializable{
+public class Paciente extends Pessoas implements Mostrar, Serializable{
 	private byte estadoCivil;
-	private String dataNascimento;
 	private String dataCadastro;
 	private String dataUltimaConsulta;
 	
@@ -24,12 +23,6 @@ public class Paciente extends Pessoas implements Serializable{
 			this.estadoCivil = 2;
 	}
 		
-	public String getDataNascimento() {
-		return dataNascimento;
-	}
-	public void setDataNascimento(String dataNascimento) {
-		this.dataNascimento = dataNascimento;
-	}
 	public String getDataCadastro() {
 		return dataCadastro;
 	}
@@ -45,10 +38,29 @@ public class Paciente extends Pessoas implements Serializable{
 	
 	public Paciente(String nome, String cpf, String rg, String sexo, String estadoCivil,
 	String dtNascimento, String dtCadastro, String dataUltimaConsulta) {
-		super(nome, cpf, rg, sexo);
+		super(nome, cpf, rg, sexo, dtNascimento);
 		setEstadoCivil(estadoCivil);
-		setDataNascimento(dtNascimento);
 		setDataCadastro(dtCadastro);
 		setDataUltimaConsulta(dataUltimaConsulta);
 	}
+
+	public void bonificacaoAniversarial(String dataAtual){
+		String aux = super.getDataNascimento();
+		boolean check = true;
+		for(int i=0; i<5; i++)
+			if(dataAtual.charAt(i) != aux.charAt(i)) check = false;
+
+		if(check == false) System.out.println("O aniversario do paciente em questão ainda não chegou!");
+
+		else{
+			System.out.println("Parabéns! O seu aniversario chegou e você tem direito a escolher um dos serviços abaixo, estéticos ou de relexamento, e recebera um desconto de 50% no valor de uma sessão.");
+			DadosServicosExtras.listar();
+		}
+	}
+	//Finalizar
+	public void mostrarDados(){
+        System.out.println("Nome: " + getNome());
+        System.out.println("Tipo:" + getTipo());
+        System.out.println("Valor do Servico: " + getValorServico());
+    }
 }

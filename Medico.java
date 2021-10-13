@@ -68,9 +68,9 @@ public class Medico extends Funcionario {
 		this.especialidades.add(especialidade);
 	}
 
-	public Medico (String nome, String cpf, String rg, String sexo, String dtAdClinica, int nroCarTrabalho, String usuario, String senha,
+	public Medico (String nome, String cpf, String rg, String sexo, String dtAdClinica, String dtNascimento, int nroCarTrabalho, String usuario, String senha,
 	String CRM, ArrayList<String> especialidades, int nroConsultas, float valorConsulta_privado, float valorConsulta_plano, ArrayList<PlanodeSaude> planosAtendidos){
-		super(nome, cpf, rg, sexo, dtAdClinica, nroCarTrabalho, usuario, senha);
+		super(nome, cpf, rg, sexo, dtNascimento, dtAdClinica, nroCarTrabalho, usuario, senha);
 		setCRM(CRM);
 		setEspecialidades(especialidades);
 		setNroConsultas(nroConsultas);
@@ -81,7 +81,7 @@ public class Medico extends Funcionario {
 
 	//Construtor apenas com cpf e os planos atendidos
 	public Medico (String cpf, ArrayList<PlanodeSaude> planosAtendidos){
-		super(" ", cpf, " ", " ", " ", 0, " ", " ");
+		super(" ", cpf, " ", " ", " ", " ", 0, " ", " ");
 		setCRM(" ");
 		ArrayList<String> especialidadesVazio = new ArrayList<String>();
 		setEspecialidades(especialidadesVazio);
@@ -93,7 +93,7 @@ public class Medico extends Funcionario {
 
 	//Construtor default
 	public Medico(){
-		super(" ", " ", " ", " ", " ", 0, " ", " ");
+		super(" ", " ", " ", " ", " ", " ", 0, " ", " ");
 		setCRM(" ");
 		ArrayList<String> especialidadesVazio = new ArrayList<String>();
 		setEspecialidades(especialidadesVazio);
@@ -110,4 +110,23 @@ public class Medico extends Funcionario {
 	public void ZerarConsultasMes() {
 		this.SomaConsultasMes = 0.00f;
 	}
+
+	public void bonificacaoAniversarial(String dataAtual){
+		String aux = super.getDataNascimento();
+		boolean check = true;
+		for(int i=0; i<5; i++)
+			if(dataAtual.charAt(i) != aux.charAt(i)) check = false;
+
+		if(check == false) System.out.println("O aniversario do medico em questão ainda não chegou!");
+		else{
+			System.out.println("Parabéns! O seu aniversario chegou e você tem direito a escolher um dos serviços abaixo, estéticos ou de relexamento, para realizar uma sessão gratuita junto ao seu conjuge.");
+			DadosServicosExtras.listar();
+		}
+	}
+	//Finalizar
+	public void mostrarDados(){
+        System.out.println("Nome: " + getNome());
+        System.out.println("Tipo:" + getTipo());
+        System.out.println("Valor do Servico: " + getValorServico());
+    }
 }

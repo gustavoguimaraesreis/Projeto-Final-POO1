@@ -36,14 +36,33 @@ public class DemaisFuncionarios extends Funcionario{
 	}
 
 	public DemaisFuncionarios (String nome, String cpf, String rg, String sexo, String dtAdClinica,
-	int nroCarTrabalho, String usuario, String senha, float salarioBase, String cargo){
-		super(nome, cpf, rg, sexo, dtAdClinica, nroCarTrabalho, usuario, senha);
+	String dtNascimento, int nroCarTrabalho, String usuario, String senha, float salarioBase, String cargo){
+		super(nome, cpf, rg, sexo, dtNascimento, dtAdClinica, nroCarTrabalho, usuario, senha);
 		setCargo(cargo);
 		setSalarioBase(salarioBase);
+	}
+
+	public void bonificacaoAniversarial(String dataAtual){
+		String aux = super.getDataNascimento();
+		boolean check = true;
+		for(int i=0; i<5; i++)
+			if(dataAtual.charAt(i) != aux.charAt(i)) check = false;
+
+		if(check == false) System.out.println("O aniversario do funcionario em questão ainda não chegou!");
+		else{
+			System.out.println("Parabéns! O seu aniversario chegou e você tem direito a escolher um dos serviços abaixo, estéticos ou de relexamento, para realizar uma sessão gratuita.");
+			DadosServicosExtras.listar();
+		}
 	}
 
 	//parte 3, letra i:
 	public float calcularSalario() {
 		return salarioBase + gratificacao;
 	}
+	//Finalizar
+	public void mostrarDados(){
+        System.out.println("Nome: " + getNome());
+        System.out.println("Tipo:" + getTipo());
+        System.out.println("Valor do Servico: " + getValorServico());
+    }
 }

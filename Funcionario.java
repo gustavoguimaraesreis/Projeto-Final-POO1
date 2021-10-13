@@ -1,6 +1,6 @@
 import java.io.Serializable;
 
-public abstract class Funcionario extends Pessoas implements Serializable {
+public abstract class Funcionario extends Pessoas implements Mostrar, Serializable {
 	private String dataAdmissaoClinica;
 	private int nroCarteiraTrabalho;
 	private String usuario;
@@ -38,14 +38,16 @@ public abstract class Funcionario extends Pessoas implements Serializable {
 		this.senha = senha;
 	}
 	
-	public Funcionario(String nome, String cpf, String rg, String sexo,
-	String dtAdClinica, int nroCarTrabalho, String usuario, String senha) {
-		super(nome, cpf, rg, sexo);
+	public Funcionario(String nome, String cpf, String rg, String sexo, String dtAdClinica,
+	String dtNascimento, int nroCarTrabalho, String usuario, String senha) {
+		super(nome, cpf, rg, sexo, dtNascimento);
 		setDataAdmissaoClinica(dtAdClinica);
 		setNroCarteiraTrabalho(nroCarTrabalho);
 		setUsuario(usuario);
 		setSenha(senha);
 	}
+	
+	
 	
 	//Método abstrato (parte 5, letra b)
 	public abstract float calcularSalario();

@@ -1,9 +1,10 @@
 
-public class Pessoas {
+public abstract class Pessoas {
 	private String nome;
 	private String CPF;
 	private String RG;
 	private String sexo;
+	private String dataNascimento;
 	private Endereco endereco;
 
 	//Setters e Getters
@@ -12,6 +13,12 @@ public class Pessoas {
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+	public String getDataNascimento() {
+		return dataNascimento;
+	}
+	public void setDataNascimento(String dataNascimento) {
+		this.dataNascimento = dataNascimento;
 	}
 	public String getCPF() {
 		return CPF;
@@ -81,10 +88,13 @@ public class Pessoas {
 		this.endereco = endereco;
 	}
 
-	public Pessoas(String nome, String cpf, String rg, String sexo) {
+	public Pessoas(String nome, String cpf, String rg, String sexo, String dataNascimento) {
 		setNome(nome);
 		setCPF(cpf);
 		setRG(rg);
 		setSexo(sexo);
+		setDataNascimento(dataNascimento);
 	}
+
+	public abstract void bonificacaoAniversarial(String dataAtual);
 }
