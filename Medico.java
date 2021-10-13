@@ -125,8 +125,11 @@ public class Medico extends Funcionario {
 	}
 	//Finalizar
 	public void mostrarDados(){
-        System.out.println("Nome: " + getNome());
-        System.out.println("Tipo:" + getTipo());
-        System.out.println("Valor do Servico: " + getValorServico());
+        System.out.println("CRM: " + getCRM());
+        System.out.println("Especialidades:" + getEspecialidades());
+        System.out.println("Número de consultas desse mês: " + getNroConsultas());
+		System.out.println("Valor da consulta privada: " + getValorConsulta_privado());
+		System.out.println("Valor da consulta com plano: " + getValorConsulta_plano());
+		System.out.println("Planos de Saúde Atendidos: " + getPlanosAtendidos());
     }
 }

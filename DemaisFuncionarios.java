@@ -61,8 +61,7 @@ public class DemaisFuncionarios extends Funcionario{
 	}
 	//Finalizar
 	public void mostrarDados(){
-        System.out.println("Nome: " + getNome());
-        System.out.println("Tipo:" + getTipo());
-        System.out.println("Valor do Servico: " + getValorServico());
+        System.out.println("Salário base: " + getSalarioBase());
+        System.out.println("Cargo dentro da Clínica:" + getCargo());
     }
 }

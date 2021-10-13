@@ -59,8 +59,8 @@ public class Paciente extends Pessoas implements Mostrar, Serializable{
 	}
 	//Finalizar
 	public void mostrarDados(){
-        System.out.println("Nome: " + getNome());
-        System.out.println("Tipo:" + getTipo());
-        System.out.println("Valor do Servico: " + getValorServico());
+        System.out.println("Estado civil: " + getEstadoCivil());
+        System.out.println("Data de cadastro:" + getDataCadastro());
+        System.out.println("Data da última consulta: " + getDataUltimaConsulta());
     }
 }

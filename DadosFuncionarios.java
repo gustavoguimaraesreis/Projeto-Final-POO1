@@ -11,7 +11,7 @@ public class DadosFuncionarios {
     }
 
     public static void listar(){
-        for(int i=0; i<funcionarios.size(); i++) funcionarios.get(i).mostrarDados;
+        for(int i=0; i<funcionarios.size(); i++) funcionarios.get(i).mostrarDados();
     }
 
     public static Funcionario buscar(String CPF){
@@ -34,5 +34,9 @@ public class DadosFuncionarios {
 
     public static void gravar(){
         boolean r = Persistency.gravar(funcionarios, "C:\\Users\\gcbsa\\OneDrive\\Documents\\College\\3° Período\\POO1\\Projeto Final\\Coding\\funcionarios.dat");
+        if(r == true)
+            System.out.println("Os dados dos funcionários da clínica foram gravados em arquivo binário corretamente");
+        else 
+            System.out.println("Erro de gravação em arquivo");
     }
 }

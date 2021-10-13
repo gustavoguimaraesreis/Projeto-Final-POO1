@@ -126,4 +126,18 @@ public class Consulta implements Mostrar, Serializable{
 		//Demais
 		Consulta.nroConsultas++;
 	}
+	public void mostrarDados(){
+        System.out.println("Data da Consulta: " + getData());
+        System.out.println("Horário:" + getHorario());
+		System.out.println("Nome do Funcionário que marcou a consulta:" + getFuncionarioAgendou().getNome());
+		System.out.println("Nome do Paciente:" + getPaciente().getNome());
+		System.out.println("Nome do Médico que realizou a consulta:" + getMedico().getNome());
+		System.out.println("Medicamentos do Paciente:" + getMedicamentosPaciente());
+		System.out.println("Observação geral do Médico:" + getObsGeral());
+		System.out.println("Receita Médica:" + getReceitaMedica());
+		System.out.println("Exames que serão realizados pelo paciente:" + getExames());
+		
+		
+    }
 }
+

@@ -10,7 +10,7 @@ public class DadosConsulta {
     }
 
     public static void listar(){
-        for(int i=0; i<consultas.size(); i++) consultas.get(i).mostrarDados;
+        for(int i=0; i<consultas.size(); i++) consultas.get(i).mostrarDados();
     }
 
     public static Consulta buscar(String data, String horario){
@@ -33,5 +33,9 @@ public class DadosConsulta {
 
     public static void gravar(){
         boolean r = Persistency.gravar(consultas, "C:\\Users\\gcbsa\\OneDrive\\Documents\\College\\3° Período\\POO1\\Projeto Final\\Coding\\consultas.dat");
+        if(r == true)
+            System.out.println("Os dados das Consultas foram gravados em formato binário corretamente");
+        else 
+            System.out.println("Erro de gravação em arquivo binário");
     }
 }
