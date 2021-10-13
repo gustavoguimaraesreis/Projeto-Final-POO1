@@ -1,5 +1,6 @@
+import java.io.Serializable;
 
-public class Paciente extends Pessoas {
+public class Paciente extends Pessoas implements Serializable{
 	private byte estadoCivil;
 	private String dataNascimento;
 	private String dataCadastro;

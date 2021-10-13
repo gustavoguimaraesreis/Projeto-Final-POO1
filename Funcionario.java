@@ -1,5 +1,6 @@
+import java.io.Serializable;
 
-public abstract class Funcionario extends Pessoas {
+public abstract class Funcionario extends Pessoas implements Serializable {
 	private String dataAdmissaoClinica;
 	private int nroCarteiraTrabalho;
 	private String usuario;

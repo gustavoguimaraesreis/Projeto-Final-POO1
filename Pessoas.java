@@ -35,17 +35,14 @@ public class Pessoas {
 			
 			/* cpfInt[i] = (int) cpf.charAt(i); */
 				cpfInt[i] = Character.getNumericValue(cpf.charAt(i));
-				System.out.println("cpfInt: " + cpfInt[i]);
 			
 		}
 		//Validando o primeiro dígito:
 		for(int i = 0; i < cpfInt.length -2; i++) {
 			validação1 += cpfInt[i] * aux1;
-			System.out.println("O primeiro digito verificador é: " + validação1);
 			aux1--;
 		}
 		validação1 = (validação1 * 10) % 11;
-		System.out.println("O primeiro digito verificador é: " + validação1);
 		
 		if(validação1 == cpfInt[9]) {//se validar o primeiro dígito, verificamos o segundo, senão já retornar falso
 			
@@ -55,7 +52,6 @@ public class Pessoas {
 				aux2--;
 			}
 			validação2 = (validação2 * 10) % 11;
-			System.out.println("O segundo digito verificador é: " + validação2);
 			if(validação2 == cpfInt[10]) {
 				this.CPF = cpf;
 				return true;
@@ -87,9 +83,7 @@ public class Pessoas {
 
 	public Pessoas(String nome, String cpf, String rg, String sexo) {
 		setNome(nome);
-		if(setCPF(cpf) == false) 
-			System.out.println("CPF Invalido");
-		else  System.out.println("CPF Valido");
+		setCPF(cpf);
 		setRG(rg);
 		setSexo(sexo);
 	}
