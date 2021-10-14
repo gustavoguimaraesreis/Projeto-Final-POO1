@@ -1,6 +1,6 @@
 import java.io.Serializable;
 
-public class Paciente extends Pessoas implements Mostrar, Serializable{
+public abstract class Paciente extends Pessoas implements Mostrar, Serializable{
 	private byte estadoCivil;
 	private String dataCadastro;
 	private String dataUltimaConsulta;
@@ -50,17 +50,22 @@ public class Paciente extends Pessoas implements Mostrar, Serializable{
 		for(int i=0; i<5; i++)
 			if(dataAtual.charAt(i) != aux.charAt(i)) check = false;
 
-		if(check == false) System.out.println("O aniversario do paciente em questão ainda não chegou!");
+		if(check == false) System.out.println("O aniversario do paciente em questão ainda não chegou!\n");
 
 		else{
-			System.out.println("Parabéns! O seu aniversario chegou e você tem direito a escolher um dos serviços abaixo, estéticos ou de relexamento, e recebera um desconto de 50% no valor de uma sessão.");
+			System.out.println("Parabéns! O seu aniversario chegou e você tem direito a escolher um dos serviços abaixo, estéticos ou de relexamento, e recebera um desconto de 50% no valor de uma sessão.\n");
 			DadosServicosExtras.listar();
 		}
 	}
-	//Finalizar
+	
 	public void mostrarDados(){
+		System.out.println("Nome: " + super.getNome());
+		System.out.println("CPF: " + super.getCPF());
+		System.out.println("RG: " + super.getRG());
+		System.out.println("Sexo: " + super.getSexo());
+		System.out.println("Data de Nascimento: " + super.getDataNascimento());
         System.out.println("Estado civil: " + getEstadoCivil());
-        System.out.println("Data de cadastro:" + getDataCadastro());
+        System.out.println("Data de cadastro: " + getDataCadastro());
         System.out.println("Data da última consulta: " + getDataUltimaConsulta());
     }
 }

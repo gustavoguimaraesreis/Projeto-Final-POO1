@@ -4,8 +4,7 @@ public class PacienteComPlano extends Paciente {
 	private int nroCarteirinha;
 	private String dataIngressoPlano;
 	private boolean periodoCarencia;
-	//Adicionei esse atributo pois um paciente com plano de saude pode ter um ou mais planos.
-	private ArrayList<PlanodeSaude> planosPossuidos = new ArrayList<PlanodeSaude>();
+	private ArrayList<PlanodeSaude> planosPossuidos;
 
 	public void setNroCarteirinha(int nroCarteirinha) {
 		this.nroCarteirinha = nroCarteirinha;
@@ -43,5 +42,18 @@ public class PacienteComPlano extends Paciente {
 		setPeriodoCarencia(periodoCarencia);
 		setDataIngressoPlano(dataIngressoPlano);
 		setPlanosPossuidos(planosPossuidos);
+	}
+
+	public void mostrarDados(){
+		super.mostrarDados();
+		System.out.println("Numero da Carteirinha: " + getNroCarteirinha());
+		System.out.println("Data de Ingresso no Plano: " + getDataIngressoPlano());
+		System.out.println("Periodo de Carencia: " + getPeriodoCarencia());
+		System.out.print("Planos de Saúde Possuidos: ");
+		for(int i=0; i<this.getPlanosPossuidos().size(); i++){
+			if(i < this.planosPossuidos.size()-1) System.out.print(this.planosPossuidos.get(i).getNome() + ", ");
+			else System.out.println(this.planosPossuidos.get(i).getNome());
+		}
+		System.out.println();
 	}
 }

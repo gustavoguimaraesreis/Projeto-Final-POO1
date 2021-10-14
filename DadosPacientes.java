@@ -7,6 +7,7 @@ public class DadosPacientes {
         pacientes.add(p);
         System.out.println("Total de pacientes: ");
         System.out.println(pacientes.size());
+        System.out.println();
     }
 
     public static void listar(){
@@ -34,8 +35,8 @@ public class DadosPacientes {
     public static void gravar(){
         boolean r = Persistency.gravar(pacientes, "C:\\Users\\gcbsa\\OneDrive\\Documents\\College\\3° Período\\POO1\\Projeto Final\\Coding\\pacientes.dat");
         if(r == true)
-            System.out.println("Os dados dos Pacientes da Clínica foram gravados em formato binário corretamente");
+            System.out.println("Os dados dos Pacientes da Clínica foram gravados em formato binário corretamente.\n");
         else 
-            System.out.println("Erro de gravação em arquivo");
+            System.out.println("Erro de gravação em arquivo.\n");
     }
 }

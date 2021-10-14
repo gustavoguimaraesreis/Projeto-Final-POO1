@@ -3,11 +3,11 @@ import java.util.ArrayList;
 
 public class Medico extends Funcionario {
 	private String CRM;
-	private ArrayList<String> especialidades = new ArrayList<String>();
+	private ArrayList<String> especialidades;
 	private int nroConsultas;
 	private float valorConsulta_privado;
 	private float valorConsulta_plano;
-	private ArrayList<PlanodeSaude> planosAtendidos = new ArrayList<PlanodeSaude>();
+	private ArrayList<PlanodeSaude> planosAtendidos;
 
 	//parte 3, letra h:
 	private float SomaConsultasMes;
@@ -68,9 +68,10 @@ public class Medico extends Funcionario {
 		this.especialidades.add(especialidade);
 	}
 
-	public Medico (String nome, String cpf, String rg, String sexo, String dtAdClinica, String dtNascimento, int nroCarTrabalho, String usuario, String senha,
-	String CRM, ArrayList<String> especialidades, int nroConsultas, float valorConsulta_privado, float valorConsulta_plano, ArrayList<PlanodeSaude> planosAtendidos){
-		super(nome, cpf, rg, sexo, dtNascimento, dtAdClinica, nroCarTrabalho, usuario, senha);
+	public Medico (String nome, String cpf, String rg, String sexo, String dtAdClinica, String dtNascimento, int nroCarTrabalho, String usuario,
+	String senha, String CRM, ArrayList<String> especialidades, int nroConsultas, float valorConsulta_privado, float valorConsulta_plano,
+	ArrayList<PlanodeSaude> planosAtendidos){
+		super(nome, cpf, rg, sexo, dtAdClinica, dtNascimento, nroCarTrabalho, usuario, senha);
 		setCRM(CRM);
 		setEspecialidades(especialidades);
 		setNroConsultas(nroConsultas);
@@ -117,19 +118,30 @@ public class Medico extends Funcionario {
 		for(int i=0; i<5; i++)
 			if(dataAtual.charAt(i) != aux.charAt(i)) check = false;
 
-		if(check == false) System.out.println("O aniversario do medico em questão ainda não chegou!");
+		if(check == false) System.out.println("O aniversario do medico em questão ainda não chegou!\n");
 		else{
-			System.out.println("Parabéns! O seu aniversario chegou e você tem direito a escolher um dos serviços abaixo, estéticos ou de relexamento, para realizar uma sessão gratuita junto ao seu conjuge.");
+			System.out.println("Parabéns! O seu aniversario chegou e você tem direito a escolher um dos serviços abaixo, estéticos ou de relexamento, para realizar uma sessão gratuita junto ao seu conjuge.\n");
 			DadosServicosExtras.listar();
 		}
 	}
-	//Finalizar
+	
 	public void mostrarDados(){
+		super.mostrarDados();
         System.out.println("CRM: " + getCRM());
-        System.out.println("Especialidades:" + getEspecialidades());
+        System.out.print("Especialidades: ");
+		for(int i=0; i<this.getEspecialidades().size(); i++){
+			if(i < this.especialidades.size()-1) System.out.print(this.getEspecialidades().get(i) + ", ");
+			else System.out.println(this.getEspecialidades().get(i));
+		}
         System.out.println("Número de consultas desse mês: " + getNroConsultas());
 		System.out.println("Valor da consulta privada: " + getValorConsulta_privado());
 		System.out.println("Valor da consulta com plano: " + getValorConsulta_plano());
-		System.out.println("Planos de Saúde Atendidos: " + getPlanosAtendidos());
+		System.out.print("Planos de Saúde Atendidos: ");
+		for(int i=0; i<this.getPlanosAtendidos().size(); i++){
+			if(i < this.planosAtendidos.size()-1) System.out.print(this.planosAtendidos.get(i).getNome() + ", ");
+			else System.out.println(this.planosAtendidos.get(i).getNome());
+		}
+		System.out.println();
     }
+	
 }

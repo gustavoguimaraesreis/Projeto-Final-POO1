@@ -37,20 +37,19 @@ public class DemaisFuncionarios extends Funcionario{
 
 	public DemaisFuncionarios (String nome, String cpf, String rg, String sexo, String dtAdClinica,
 	String dtNascimento, int nroCarTrabalho, String usuario, String senha, float salarioBase, String cargo){
-		super(nome, cpf, rg, sexo, dtNascimento, dtAdClinica, nroCarTrabalho, usuario, senha);
+		super(nome, cpf, rg, sexo, dtAdClinica, dtNascimento, nroCarTrabalho, usuario, senha);
 		setCargo(cargo);
 		setSalarioBase(salarioBase);
 	}
 
 	public void bonificacaoAniversarial(String dataAtual){
-		String aux = super.getDataNascimento();
 		boolean check = true;
 		for(int i=0; i<5; i++)
-			if(dataAtual.charAt(i) != aux.charAt(i)) check = false;
+			if(dataAtual.charAt(i) != super.getDataNascimento().charAt(i)) check = false;
 
-		if(check == false) System.out.println("O aniversario do funcionario em questão ainda não chegou!");
+		if(check == false) System.out.println("O aniversario do funcionario em questão ainda não chegou!\n");
 		else{
-			System.out.println("Parabéns! O seu aniversario chegou e você tem direito a escolher um dos serviços abaixo, estéticos ou de relexamento, para realizar uma sessão gratuita.");
+			System.out.println("Parabéns! O seu aniversario chegou e você tem direito a escolher um dos serviços abaixo, estéticos ou de relexamento, para realizar uma sessão gratuita.\n");
 			DadosServicosExtras.listar();
 		}
 	}
@@ -61,7 +60,9 @@ public class DemaisFuncionarios extends Funcionario{
 	}
 	//Finalizar
 	public void mostrarDados(){
+		super.mostrarDados();
         System.out.println("Salário base: " + getSalarioBase());
-        System.out.println("Cargo dentro da Clínica:" + getCargo());
+        System.out.println("Cargo dentro da Clínica: " + getCargo());
+		System.out.println();
     }
 }

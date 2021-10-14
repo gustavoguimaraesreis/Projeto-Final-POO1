@@ -46,9 +46,18 @@ public abstract class Funcionario extends Pessoas implements Mostrar, Serializab
 		setUsuario(usuario);
 		setSenha(senha);
 	}
-	
-	
-	
+	public void mostrarDados(){
+		System.out.println("Nome: " + super.getNome());
+		System.out.println("CPF: " + super.getCPF());
+		System.out.println("RG: " + super.getRG());
+		System.out.println("Sexo: " + super.getSexo());
+		System.out.println("Data de Nascimento: " + super.getDataNascimento());
+		System.out.println("Data de Admissão na Clínica: " + getDataAdmissaoClinica());
+		System.out.println("Numero da Carteira de Trabalho: " + getNroCarteiraTrabalho());
+		System.out.println("Usuario: " + getUsuario());
+		System.out.println("Senha: "+ getSenha());
+	}
+
 	//Método abstrato (parte 5, letra b)
 	public abstract float calcularSalario();
 	

@@ -22,4 +22,11 @@ public class PacienteSemPlano extends Paciente{
 		setValorUltimaConsulta(valorUltimaConsulta);
 		setPossuiDesconto(possuiDesconto);
 	}
+
+	public void mostrarDados(){
+		super.mostrarDados();
+		System.out.println("Possui Desconto: " + getPossuiDesconto());
+		System.out.println("Valor pago na ultima consulta: " + getValorUltimaConsulta());
+		System.out.println();
+	}
 }

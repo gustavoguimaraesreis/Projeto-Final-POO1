@@ -7,6 +7,7 @@ public class DadosServicosExtras {
         servicosExtras.add(s);
         System.out.println("Total de Servicos Extras: ");
         System.out.println(servicosExtras.size());
+        System.out.println();
     }
 
     public static void listar(){
@@ -34,8 +35,8 @@ public class DadosServicosExtras {
     public static void gravar(){
         boolean r = Persistency.gravar(servicosExtras, "C:\\Users\\gcbsa\\OneDrive\\Documents\\College\\3° Período\\POO1\\Projeto Final\\Coding\\servicosExtras.dat");
         if(r == true)
-            System.out.println("Os dados dos Serviços Extras prestados pelo Clínica foram gravados corretamente em formato binário");
+            System.out.println("Os dados dos Serviços Extras prestados pelo Clínica foram gravados corretamente em formato binário.\n");
         else 
-            System.out.println("Erro de gravação em arquivo");
+            System.out.println("Erro de gravação em arquivo.\n");
     }
 }

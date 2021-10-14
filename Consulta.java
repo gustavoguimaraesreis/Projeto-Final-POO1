@@ -11,7 +11,7 @@ public class Consulta implements Mostrar, Serializable{
 	private Paciente paciente;
 	private Medico medico;
 	private DemaisFuncionarios funcionarioAgendou;
-	private ArrayList<Exame> exames =  new ArrayList<Exame>();
+	private ArrayList<Exame> exames;
 
 	//atributos estáticos: (parte3, letra e)
 	private static int nroConsultas;
@@ -135,9 +135,12 @@ public class Consulta implements Mostrar, Serializable{
 		System.out.println("Medicamentos do Paciente:" + getMedicamentosPaciente());
 		System.out.println("Observação geral do Médico:" + getObsGeral());
 		System.out.println("Receita Médica:" + getReceitaMedica());
-		System.out.println("Exames que serão realizados pelo paciente:" + getExames());
-		
-		
+		System.out.print("Exames que serão realizados pelo paciente:");	
+		for(int i=0; i<this.getExames().size(); i++){
+			if(i < this.exames.size()-1) System.out.print(this.exames.get(i).getNomeExame() + ", ");
+			else System.out.println(this.exames.get(i).getNomeExame());
+		}
+		System.out.println();
     }
 }
 

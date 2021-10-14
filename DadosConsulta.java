@@ -7,6 +7,7 @@ public class DadosConsulta {
         consultas.add(c);
         System.out.println("Total de consultas: ");
         System.out.println(consultas.size());
+        System.out.println();
     }
 
     public static void listar(){
@@ -34,8 +35,8 @@ public class DadosConsulta {
     public static void gravar(){
         boolean r = Persistency.gravar(consultas, "C:\\Users\\gcbsa\\OneDrive\\Documents\\College\\3° Período\\POO1\\Projeto Final\\Coding\\consultas.dat");
         if(r == true)
-            System.out.println("Os dados das Consultas foram gravados em formato binário corretamente");
+            System.out.println("Os dados das Consultas foram gravados em formato binário corretamente.\n");
         else 
-            System.out.println("Erro de gravação em arquivo binário");
+            System.out.println("Erro de gravação em arquivo.\n");
     }
 }

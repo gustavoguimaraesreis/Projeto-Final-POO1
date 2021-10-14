@@ -8,6 +8,7 @@ public class DadosFuncionarios {
         funcionarios.add(f);
         System.out.println("Total de funcionarios: ");
         System.out.println(funcionarios.size());
+        System.out.println();
     }
 
     public static void listar(){
@@ -35,8 +36,8 @@ public class DadosFuncionarios {
     public static void gravar(){
         boolean r = Persistency.gravar(funcionarios, "C:\\Users\\gcbsa\\OneDrive\\Documents\\College\\3° Período\\POO1\\Projeto Final\\Coding\\funcionarios.dat");
         if(r == true)
-            System.out.println("Os dados dos funcionários da clínica foram gravados em arquivo binário corretamente");
+            System.out.println("Os dados dos funcionários da clínica foram gravados em arquivo binário corretamente.\n");
         else 
-            System.out.println("Erro de gravação em arquivo");
+            System.out.println("Erro de gravação em arquivo.\n");
     }
 }
