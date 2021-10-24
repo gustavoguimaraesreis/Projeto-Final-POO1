@@ -1,3 +1,5 @@
+package Codigo;
+
 import java.util.ArrayList;
 import java.io.Serializable;
 
@@ -143,4 +145,3 @@ public class Consulta implements Mostrar, Serializable{
 		System.out.println();
     }
 }
-

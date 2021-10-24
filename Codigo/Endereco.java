@@ -1,3 +1,4 @@
+package Codigo;
 
 public class Endereco {
 	private String rua;

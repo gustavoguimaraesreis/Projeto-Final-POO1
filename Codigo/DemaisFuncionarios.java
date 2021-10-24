@@ -1,3 +1,4 @@
+package Codigo;
 
 public class DemaisFuncionarios extends Funcionario{
 	private float salarioBase;

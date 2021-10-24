@@ -1,3 +1,4 @@
+package Codigo;
 
 public class Exame {
 	private String tipoExame;

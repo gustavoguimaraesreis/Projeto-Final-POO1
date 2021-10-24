@@ -1,3 +1,5 @@
+package Codigo;
+
 import java.io.Serializable;
 
 public abstract class Funcionario extends Pessoas implements Mostrar, Serializable {

@@ -1,3 +1,5 @@
+package Codigo;
+
 import java.io.Serializable;
 
 public abstract class Paciente extends Pessoas implements Mostrar, Serializable{
