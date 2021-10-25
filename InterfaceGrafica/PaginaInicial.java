@@ -11,34 +11,34 @@ public class PaginaInicial extends JFrame {
 	private JButton cadastro, btnBuscar, btnRemover;
 
 	public PaginaInicial() {
+		setAlwaysOnTop(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 490, 140);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		//tratador dos botões;
 		TrataBotoes tratador = new TrataBotoes();
 
 		cadastro = new JButton("Cadastrar");
-		cadastro.addActionListener(tratador);
-		cadastro.setBounds(33, 129, 89, 23);
+		cadastro.setBounds(29, 66, 133, 23);
 		contentPane.add(cadastro);
+		cadastro.addActionListener(tratador);
 
 		btnBuscar = new JButton("Buscar");
-		btnBuscar.setBounds(155, 129, 89, 23);
+		btnBuscar.setBounds(197, 66, 89, 23);
 		contentPane.add(btnBuscar);
 		btnBuscar.addActionListener(tratador);
 
 		btnRemover = new JButton("Remover");
-		btnRemover.setBounds(294, 129, 89, 23);
+		btnRemover.setBounds(328, 66, 119, 23);
 		contentPane.add(btnRemover);
-		btnBuscar.addActionListener(tratador);
+		btnRemover.addActionListener(tratador);
 
 		JLabel lblNewLabel = new JLabel("Opções do Sistema");
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNewLabel.setBounds(126, 24, 189, 32);
+		lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 20));
+		lblNewLabel.setBounds(134, 12, 232, 23);
 		contentPane.add(lblNewLabel);
 	}
 	private class TrataBotoes implements ActionListener {
@@ -53,5 +53,4 @@ public class PaginaInicial extends JFrame {
 			dispose();
 		}
 	}
-
 }
