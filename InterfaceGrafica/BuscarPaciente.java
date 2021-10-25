@@ -5,14 +5,14 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.border.*;
 
-public class ConsultarPaciente extends JFrame {
+public class BuscarPaciente extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
 	private JButton btnVoltar, btnSubmeter;
 
-	public ConsultarPaciente() {
-		super("Consultar - Paciente");
+	public BuscarPaciente() {
+		super("Buscar - Paciente");
 		setAlwaysOnTop(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 470, 150);
@@ -24,7 +24,7 @@ public class ConsultarPaciente extends JFrame {
 
 		TrataBotoes tratador = new TrataBotoes();
 		
-		JLabel lblInformeAbaixo = new JLabel("Informe, abaixo, o CPF do paciente que deseja consultar:");
+		JLabel lblInformeAbaixo = new JLabel("Informe, abaixo, o CPF do paciente que deseja buscar:");
 		lblInformeAbaixo.setBounds(20, 12, 440, 15);
 		contentPane.add(lblInformeAbaixo);
 		
@@ -51,10 +51,10 @@ public class ConsultarPaciente extends JFrame {
 
         public void actionPerformed (ActionEvent e){
             if(e.getSource() == btnVoltar){
-                Consultar pg1 = new Consultar();
+                Buscar pg1 = new Buscar();
                 pg1.setVisible(true);
             }
-            ConsultarPaciente.this.dispose();
+            BuscarPaciente.this.dispose();
         }
     }
 }

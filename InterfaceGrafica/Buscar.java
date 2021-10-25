@@ -4,13 +4,13 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.border.*;
-public class Consultar extends JFrame {
+public class Buscar extends JFrame {
 
 	private JPanel contentPane;
 	private JButton btnPaciente, btnFuncionario, btnServiçoExtra, btnConsulta, btnVoltar;
 	
-	public Consultar() {
-		super("Consulta");
+	public Buscar() {
+		super("Buscar");
 		setAlwaysOnTop(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 700, 320);
@@ -21,7 +21,7 @@ public class Consultar extends JFrame {
 
 		TrataBotoes tratador = new TrataBotoes();
 		
-		JLabel lblOQueDeseja = new JLabel("O que deseja consultar no sistema?");
+		JLabel lblOQueDeseja = new JLabel("O que deseja buscar no sistema?");
 		lblOQueDeseja.setFont(new Font("Dialog", Font.BOLD, 22));
 		lblOQueDeseja.setBounds(122, 25, 457, 27);
 		contentPane.add(lblOQueDeseja);
@@ -57,26 +57,26 @@ public class Consultar extends JFrame {
 
 		public void actionPerformed (ActionEvent e){
 			if(e.getSource() == btnPaciente){
-				ConsultarPaciente pg = new ConsultarPaciente();
+				BuscarPaciente pg = new BuscarPaciente();
 				pg.setVisible(true);
 			}else if(e.getSource() == btnFuncionario){
-				ConsultarFuncionario pg = new ConsultarFuncionario();
+				BuscarFuncionario pg = new BuscarFuncionario();
 				pg.setVisible(true);
 			}else if (e.getSource() == btnConsulta){
-				ConsultarConsulta pg = new ConsultarConsulta();
+				BuscarConsulta pg = new BuscarConsulta();
 				pg.setVisible(true);
 			}else if (e.getSource() == btnServiçoExtra){
-				ConsultarServiçoExtra pg = new ConsultarServiçoExtra();
+				BuscarServiçoExtra pg = new BuscarServiçoExtra();
 				pg.setVisible(true);
 			}else{
 
 			}
-			Consultar.this.dispose();
+			Buscar.this.dispose();
 		}
 	}
 
 	public static void main(String[] args) {
-		Consultar Page = new Consultar();
+		Buscar Page = new Buscar();
 		Page.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		Page.setVisible(true);
 	}
