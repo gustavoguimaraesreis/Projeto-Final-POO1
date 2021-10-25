@@ -9,17 +9,17 @@ public abstract class Paciente extends Pessoas implements Mostrar, Serializable{
 	
 	public String getEstadoCivil() {
 		if(estadoCivil == 0)
-			return "solteiro";
+			return "Solteiro";
 		else if(estadoCivil == 1)
-			return "casado";
+			return "Casado";
 		else 
-			return "divorciado";
+			return "Divorciado";
 		
 	}
 	public void setEstadoCivil(String estadoCivil) {
-		if(estadoCivil == "solteiro")
+		if(estadoCivil == "Solteiro")
 			this.estadoCivil = 0;
-		else if(estadoCivil == "casado")
+		else if(estadoCivil == "Casado")
 			this.estadoCivil = 1;
 		else
 			this.estadoCivil = 2;

@@ -12,7 +12,7 @@ public class VisualizarEndereco extends JFrame {
 	private JPanel contentPane;
 
     private JLabel lblRua, lblNumero, lblComplemento, lblBairro, lblCep, lblCidade, lblEndereco;
-    private JTextPane textPaneW, textPaneB;
+    private JPanel textPaneW, textPaneB;
     private JButton btnFechar;
 
 	public VisualizarEndereco(Pessoas P) {
@@ -26,6 +26,13 @@ public class VisualizarEndereco extends JFrame {
 		contentPane.setLayout(null);
 
         TrataBotoes tratador = new TrataBotoes();
+
+		lblEndereco = new JLabel(" Endereço");
+		lblEndereco.setForeground(Color.WHITE);
+		lblEndereco.setFont(new Font("Dialog", Font.BOLD, 16));
+		lblEndereco.setBackground(Color.BLACK);
+		lblEndereco.setBounds(40, 32, 177, 15);
+		contentPane.add(lblEndereco);
 		
 		lblRua = new JLabel("Rua: " + P.getEndereco().getRua());
 		lblRua.setBounds(54, 72, 381, 15);
@@ -50,21 +57,15 @@ public class VisualizarEndereco extends JFrame {
 		lblCidade = new JLabel("Cidade: " + P.getEndereco().getCidade());
 		lblCidade.setBounds(54, 222, 381, 15);
 		contentPane.add(lblCidade);
-		
-		lblEndereco = new JLabel("Endereço");
-		lblEndereco.setForeground(Color.WHITE);
-		lblEndereco.setFont(new Font("Dialog", Font.BOLD, 16));
-		lblEndereco.setBackground(Color.BLACK);
-		lblEndereco.setBounds(40, 32, 177, 15);
-		contentPane.add(lblEndereco);
 
-        textPaneW = new JTextPane();
+        textPaneW = new JPanel();
+		textPaneW.setBackground(Color.WHITE);
 		textPaneW.setBounds(35, 59, 400, 194);
 		contentPane.add(textPaneW);
 		
-		textPaneB = new JTextPane();
+		textPaneB = new JPanel();
 		textPaneB.setBackground(Color.BLACK);
-		textPaneB.setBounds(35, 25, 121, 35);
+		textPaneB.setBounds(35, 25, 107, 35);
 		contentPane.add(textPaneB);
 		
 		btnFechar = new JButton("Fechar");

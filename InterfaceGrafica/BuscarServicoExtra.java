@@ -54,6 +54,7 @@ public class BuscarServicoExtra extends JFrame {
             if(e.getSource() == btnVoltar){
                 Buscar pg1 = new Buscar();
                 pg1.setVisible(true);
+				dispose();
             }else if(e.getSource() == btnSubmeter){
 				String retorno = textField.getText();
 				ServicosExtras SE = null;
@@ -64,7 +65,6 @@ public class BuscarServicoExtra extends JFrame {
 					JOptionPane.showMessageDialog(null, "Nenhum resultado encontrado!", "Erro", JOptionPane.ERROR_MESSAGE);
 				}
 			}
-        	dispose();
         }
     }
 }
