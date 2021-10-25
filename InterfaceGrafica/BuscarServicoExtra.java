@@ -5,6 +5,9 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.border.*;
 
+import Codigo.DadosServicosExtras;
+import Codigo.ServicosExtras;
+
 public class BuscarServicoExtra extends JFrame {
 
 	private JPanel contentPane;
@@ -51,7 +54,16 @@ public class BuscarServicoExtra extends JFrame {
             if(e.getSource() == btnVoltar){
                 Buscar pg1 = new Buscar();
                 pg1.setVisible(true);
-            }
+            }else if(e.getSource() == btnSubmeter){
+				String retorno = textField.getText();
+				ServicosExtras SE = null;
+				SE = DadosServicosExtras.buscar(retorno);
+				if(SE != null){
+					dispose();
+				}else{
+					JOptionPane.showMessageDialog(null, "Nenhum resultado encontrado!", "Erro", JOptionPane.ERROR_MESSAGE);
+				}
+			}
         	dispose();
         }
     }

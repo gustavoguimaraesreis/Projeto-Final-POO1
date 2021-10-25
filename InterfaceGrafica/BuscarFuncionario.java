@@ -5,6 +5,9 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.border.*;
 
+import Codigo.DadosFuncionarios;
+import Codigo.Funcionario;
+
 public class BuscarFuncionario extends JFrame {
 
 	private JPanel contentPane;
@@ -52,8 +55,17 @@ public class BuscarFuncionario extends JFrame {
             if(e.getSource() == btnVoltar){
                 Buscar pg1 = new Buscar();
                 pg1.setVisible(true);
-            }
-           	dispose();
+				dispose();
+            }else if(e.getSource() == btnSubmeter){
+				String retorno = textField.getText();
+				Funcionario F = null;
+				F = DadosFuncionarios.buscar(retorno);
+				if(F != null){
+					dispose();
+				}else{
+					JOptionPane.showMessageDialog(null, "Nenhum resultado encontrado!", "Erro", JOptionPane.ERROR_MESSAGE);
+				}
+			}
         }
     }
 }
