@@ -1,23 +1,12 @@
 package InterfaceGrafica;
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.border.LineBorder;
-import java.awt.Color;
-import javax.swing.JLabel;
-import javax.swing.JComboBox;
-import javax.swing.JButton;
-import javax.swing.JCheckBox;
-import javax.swing.JTextField;
-import javax.swing.JTextArea;
-import java.awt.SystemColor;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.border.*;
 
-public class CadastroPacientePlano extends JFrame {
+
+public class CadastroPacienteSemPlano extends JFrame {
 
 	private JPanel contentPane;
 	private JButton btnVoltar;
@@ -31,11 +20,11 @@ public class CadastroPacientePlano extends JFrame {
 	private JTextField textField_7;
 	private JTextField textField_8;
 	private JTextField textField_9;
-	private JTextField textField_10;
 
-	public CadastroPacientePlano() {
+
+	public CadastroPacienteSemPlano() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 615, 534);
+		setBounds(100, 100, 615, 450);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -44,14 +33,14 @@ public class CadastroPacientePlano extends JFrame {
 		JPanel panel = new JPanel();
 		panel.setBackground(SystemColor.menu);
 		panel.setBorder(new LineBorder(Color.GRAY, 2));
-		panel.setBounds(10, 11, 581, 475);
+		panel.setBounds(10, 11, 581, 379);
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
 		//tratador dos botões
 		TrataBotoes tratador = new TrataBotoes();
 		
-		JLabel lblNewLabel = new JLabel("Cadastro de Paciente com Plano De Sa\u00FAde");
+		JLabel lblNewLabel = new JLabel("Cadastro de Paciente sem Plano de Sa\u00FAde");
 		lblNewLabel.setBounds(173, 7, 258, 14);
 		panel.add(lblNewLabel);
 		
@@ -162,50 +151,23 @@ public class CadastroPacientePlano extends JFrame {
 		lblNewLabel_11.setBounds(10, 156, 91, 14);
 		panel_1.add(lblNewLabel_11);
 		
-		JLabel lblNewLabel_14 = new JLabel("Data de Ingresso: ");
-		lblNewLabel_14.setBounds(24, 322, 120, 14);
-		panel.add(lblNewLabel_14);
-		
-		JLabel lblNewLabel_15 = new JLabel("Per\u00EDodo de Car\u00EAncia: ");
-		lblNewLabel_15.setBounds(24, 360, 133, 14);
-		panel.add(lblNewLabel_15);
-		
-		JPanel panel_2 = new JPanel();
-		panel_2.setBorder(new LineBorder(Color.LIGHT_GRAY));
-		panel_2.setBounds(12, 245, 300, 150);
-		panel.add(panel_2);
-		panel_2.setLayout(null);
-		
-		JLabel lblNewLabel_16 = new JLabel("Dados do Plano");
-		lblNewLabel_16.setBounds(111, 5, 92, 14);
-		panel_2.add(lblNewLabel_16);
-		
-		JLabel lblNewLabel_10 = new JLabel("N\u00FAmero da Carteirinha: ");
-		lblNewLabel_10.setBounds(10, 35, 143, 14);
-		panel_2.add(lblNewLabel_10);
-		
-		JCheckBox chckbxNewCheckBox_2 = new JCheckBox("");
-		chckbxNewCheckBox_2.setBounds(152, 112, 30, 23);
-		panel_2.add(chckbxNewCheckBox_2);
-		
-		textField_9 = new JTextField();
-		textField_9.setBounds(152, 32, 96, 20);
-		panel_2.add(textField_9);
-		textField_9.setColumns(10);
-		
-		textField_10 = new JTextField();
-		textField_10.setBounds(152, 76, 96, 20);
-		panel_2.add(textField_10);
-		textField_10.setColumns(10);
-		
 		JButton btnNewButton = new JButton("Enviar");
-		btnNewButton.setBounds(90, 425, 89, 23);
+		btnNewButton.setBounds(68, 333, 89, 23);
 		panel.add(btnNewButton);
 		
 		btnVoltar = new JButton("Voltar");
-		btnVoltar.setBounds(382, 425, 89, 23);
+		btnVoltar.setBounds(441, 333, 89, 23);
 		btnVoltar.addActionListener(tratador);
 		panel.add(btnVoltar);
+		
+		JLabel lblNewLabel_10 = new JLabel("Desconto: ");
+		lblNewLabel_10.setBounds(24, 233, 72, 14);
+		panel.add(lblNewLabel_10);
+		
+		textField_9 = new JTextField();
+		textField_9.setBounds(106, 230, 96, 20);
+		panel.add(textField_9);
+		textField_9.setColumns(10);
 	}
 	
 	private class TrataBotoes implements ActionListener {
@@ -214,7 +176,8 @@ public class CadastroPacientePlano extends JFrame {
 				Cadastro frame = new Cadastro();
 				frame.setVisible(true);
 			}
-			CadastroPacientePlano.this.dispose();
+			CadastroPacienteSemPlano.this.dispose();
 		}
 	}
 }
+

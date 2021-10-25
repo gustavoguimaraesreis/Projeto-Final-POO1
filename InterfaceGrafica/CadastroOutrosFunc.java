@@ -1,23 +1,12 @@
 package InterfaceGrafica;
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.border.LineBorder;
-import java.awt.Color;
-import javax.swing.JLabel;
-import javax.swing.JComboBox;
-import javax.swing.JButton;
-import javax.swing.JCheckBox;
-import javax.swing.JTextField;
-import javax.swing.JTextArea;
-import java.awt.SystemColor;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.border.*;
 
-public class CadastroPacientePlano extends JFrame {
+
+public class CadastroOutrosFunc extends JFrame {
 
 	private JPanel contentPane;
 	private JButton btnVoltar;
@@ -32,10 +21,15 @@ public class CadastroPacientePlano extends JFrame {
 	private JTextField textField_8;
 	private JTextField textField_9;
 	private JTextField textField_10;
+	private JTextField textField_11;
+	private JTextField textField_12;
+	private JTextField textField_13;
+	private JTextField textField_14;
 
-	public CadastroPacientePlano() {
+	
+	public CadastroOutrosFunc() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 615, 534);
+		setBounds(100, 100, 700, 710);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -44,57 +38,53 @@ public class CadastroPacientePlano extends JFrame {
 		JPanel panel = new JPanel();
 		panel.setBackground(SystemColor.menu);
 		panel.setBorder(new LineBorder(Color.GRAY, 2));
-		panel.setBounds(10, 11, 581, 475);
+		panel.setBounds(10, 11, 666, 652);
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
 		//tratador dos botões
 		TrataBotoes tratador = new TrataBotoes();
 		
-		JLabel lblNewLabel = new JLabel("Cadastro de Paciente com Plano De Sa\u00FAde");
-		lblNewLabel.setBounds(173, 7, 258, 14);
+		JLabel lblNewLabel = new JLabel("Cadastro de M\u00E9dico");
+		lblNewLabel.setBounds(245, 11, 119, 14);
 		panel.add(lblNewLabel);
-		
-		JLabel lblNewLabel_1 = new JLabel("Formul\u00E1rio de Cadastro");
-		lblNewLabel_1.setBounds(133, 31, 179, 14);
-		panel.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("Nome: ");
 		lblNewLabel_2.setBounds(24, 61, 49, 14);
 		panel.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("CPF: ");
-		lblNewLabel_3.setBounds(24, 83, 49, 14);
+		lblNewLabel_3.setBounds(24, 103, 49, 14);
 		panel.add(lblNewLabel_3);
 		
 		JLabel lblNewLabel_4 = new JLabel("Data de Nascimento: ");
-		lblNewLabel_4.setBounds(24, 119, 133, 14);
+		lblNewLabel_4.setBounds(24, 147, 133, 14);
 		panel.add(lblNewLabel_4);
 		
 		JCheckBox chckbxNewCheckBox = new JCheckBox("Masculino");
-		chckbxNewCheckBox.setBounds(58, 171, 99, 23);
+		chckbxNewCheckBox.setBounds(58, 193, 99, 23);
 		panel.add(chckbxNewCheckBox);
 		
 		JCheckBox chckbxNewCheckBox_1 = new JCheckBox("Femino");
-		chckbxNewCheckBox_1.setBounds(58, 196, 99, 23);
+		chckbxNewCheckBox_1.setBounds(58, 219, 99, 23);
 		panel.add(chckbxNewCheckBox_1);
 		
 		JLabel lblNewLabel_5 = new JLabel("Sexo: ");
-		lblNewLabel_5.setBounds(35, 150, 49, 14);
+		lblNewLabel_5.setBounds(44, 172, 49, 14);
 		panel.add(lblNewLabel_5);
 		
 		textField = new JTextField();
-		textField.setBounds(71, 58, 96, 20);
+		textField.setBounds(71, 58, 220, 20);
 		panel.add(textField);
 		textField.setColumns(10);
 		
 		textField_1 = new JTextField();
-		textField_1.setBounds(71, 80, 96, 20);
+		textField_1.setBounds(71, 100, 220, 20);
 		panel.add(textField_1);
 		textField_1.setColumns(10);
 		
 		textField_2 = new JTextField();
-		textField_2.setBounds(168, 116, 96, 20);
+		textField_2.setBounds(178, 147, 96, 20);
 		panel.add(textField_2);
 		textField_2.setColumns(10);
 		
@@ -111,22 +101,22 @@ public class CadastroPacientePlano extends JFrame {
 		panel.add(lblNewLabel_9);
 		
 		textField_3 = new JTextField();
-		textField_3.setBounds(441, 80, 96, 20);
+		textField_3.setBounds(441, 80, 179, 20);
 		panel.add(textField_3);
 		textField_3.setColumns(10);
 		
 		textField_4 = new JTextField();
-		textField_4.setBounds(441, 116, 96, 20);
+		textField_4.setBounds(441, 116, 179, 20);
 		panel.add(textField_4);
 		textField_4.setColumns(10);
 		
 		textField_5 = new JTextField();
-		textField_5.setBounds(441, 150, 96, 20);
+		textField_5.setBounds(441, 150, 179, 20);
 		panel.add(textField_5);
 		textField_5.setColumns(10);
 		
 		textField_6 = new JTextField();
-		textField_6.setBounds(441, 185, 96, 20);
+		textField_6.setBounds(441, 185, 179, 20);
 		panel.add(textField_6);
 		textField_6.setColumns(10);
 		
@@ -135,7 +125,7 @@ public class CadastroPacientePlano extends JFrame {
 		panel.add(lblNewLabel_12);
 		
 		textField_7 = new JTextField();
-		textField_7.setBounds(441, 216, 96, 20);
+		textField_7.setBounds(441, 216, 179, 20);
 		panel.add(textField_7);
 		textField_7.setColumns(10);
 		
@@ -144,68 +134,106 @@ public class CadastroPacientePlano extends JFrame {
 		panel.add(lblNewLabel_13);
 		
 		textField_8 = new JTextField();
-		textField_8.setBounds(441, 257, 96, 20);
+		textField_8.setBounds(441, 257, 179, 20);
 		panel.add(textField_8);
 		textField_8.setColumns(10);
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBorder(new LineBorder(Color.LIGHT_GRAY));
-		panel_1.setBounds(334, 33, 227, 267);
+		panel_1.setBounds(301, 33, 342, 267);
 		panel.add(panel_1);
 		panel_1.setLayout(null);
 		
 		JLabel lblNewLabel_6 = new JLabel("Endere\u00E7o");
-		lblNewLabel_6.setBounds(90, 5, 65, 14);
+		lblNewLabel_6.setBounds(134, 11, 65, 14);
 		panel_1.add(lblNewLabel_6);
 		
 		JLabel lblNewLabel_11 = new JLabel("Complemento: ");
-		lblNewLabel_11.setBounds(10, 156, 91, 14);
+		lblNewLabel_11.setBounds(25, 155, 91, 14);
 		panel_1.add(lblNewLabel_11);
 		
-		JLabel lblNewLabel_14 = new JLabel("Data de Ingresso: ");
-		lblNewLabel_14.setBounds(24, 322, 120, 14);
-		panel.add(lblNewLabel_14);
-		
-		JLabel lblNewLabel_15 = new JLabel("Per\u00EDodo de Car\u00EAncia: ");
-		lblNewLabel_15.setBounds(24, 360, 133, 14);
-		panel.add(lblNewLabel_15);
-		
-		JPanel panel_2 = new JPanel();
-		panel_2.setBorder(new LineBorder(Color.LIGHT_GRAY));
-		panel_2.setBounds(12, 245, 300, 150);
-		panel.add(panel_2);
-		panel_2.setLayout(null);
-		
-		JLabel lblNewLabel_16 = new JLabel("Dados do Plano");
-		lblNewLabel_16.setBounds(111, 5, 92, 14);
-		panel_2.add(lblNewLabel_16);
-		
-		JLabel lblNewLabel_10 = new JLabel("N\u00FAmero da Carteirinha: ");
-		lblNewLabel_10.setBounds(10, 35, 143, 14);
-		panel_2.add(lblNewLabel_10);
-		
-		JCheckBox chckbxNewCheckBox_2 = new JCheckBox("");
-		chckbxNewCheckBox_2.setBounds(152, 112, 30, 23);
-		panel_2.add(chckbxNewCheckBox_2);
-		
-		textField_9 = new JTextField();
-		textField_9.setBounds(152, 32, 96, 20);
-		panel_2.add(textField_9);
-		textField_9.setColumns(10);
-		
-		textField_10 = new JTextField();
-		textField_10.setBounds(152, 76, 96, 20);
-		panel_2.add(textField_10);
-		textField_10.setColumns(10);
-		
 		JButton btnNewButton = new JButton("Enviar");
-		btnNewButton.setBounds(90, 425, 89, 23);
+		btnNewButton.setBounds(68, 609, 89, 23);
 		panel.add(btnNewButton);
 		
 		btnVoltar = new JButton("Voltar");
-		btnVoltar.setBounds(382, 425, 89, 23);
+		btnVoltar.setBounds(441, 609, 89, 23);
 		btnVoltar.addActionListener(tratador);
 		panel.add(btnVoltar);
+		
+		JPanel panel_2 = new JPanel();
+		panel_2.setBorder(new LineBorder(Color.LIGHT_GRAY));
+		panel_2.setBounds(301, 352, 342, 191);
+		panel.add(panel_2);
+		panel_2.setLayout(null);
+		
+		JLabel lblNewLabel_14 = new JLabel("Data de admiss\u00E3o na Cl\u00EDnica: ");
+		lblNewLabel_14.setBounds(29, 66, 186, 14);
+		panel_2.add(lblNewLabel_14);
+		
+		textField_9 = new JTextField();
+		textField_9.setBounds(236, 63, 96, 20);
+		panel_2.add(textField_9);
+		textField_9.setColumns(10);
+		
+		JLabel lblNewLabel_15 = new JLabel("N\u00FAmero da Carteira de Trabalho:");
+		lblNewLabel_15.setBounds(29, 97, 195, 14);
+		panel_2.add(lblNewLabel_15);
+		
+		textField_10 = new JTextField();
+		textField_10.setBounds(236, 94, 96, 20);
+		panel_2.add(textField_10);
+		textField_10.setColumns(10);
+		
+		JLabel lblNewLabel_16 = new JLabel("Usu\u00E1rio: ");
+		lblNewLabel_16.setBounds(125, 128, 72, 14);
+		panel_2.add(lblNewLabel_16);
+		
+		textField_11 = new JTextField();
+		textField_11.setBounds(236, 125, 96, 20);
+		panel_2.add(textField_11);
+		textField_11.setColumns(10);
+		
+		JLabel lblNewLabel_17 = new JLabel("Senha: ");
+		lblNewLabel_17.setBounds(135, 159, 72, 14);
+		panel_2.add(lblNewLabel_17);
+		
+		textField_12 = new JTextField();
+		textField_12.setBounds(236, 156, 96, 20);
+		panel_2.add(textField_12);
+		textField_12.setColumns(10);
+		
+		JLabel lblNewLabel_10 = new JLabel("Dados do funcin\u00E1rio");
+		lblNewLabel_10.setBounds(111, 23, 127, 14);
+		panel_2.add(lblNewLabel_10);
+		
+		JPanel panel_3 = new JPanel();
+		panel_3.setBorder(new LineBorder(new Color(192, 192, 192)));
+		panel_3.setBounds(23, 270, 219, 267);
+		panel.add(panel_3);
+		panel_3.setLayout(null);
+		
+		JLabel lblNewLabel_18 = new JLabel("Dados da Profiss\u00E3o: ");
+		lblNewLabel_18.setBounds(47, 11, 146, 14);
+		panel_3.add(lblNewLabel_18);
+		
+		JLabel lblNewLabel_19 = new JLabel("Sal\u00E1rio Base: ");
+		lblNewLabel_19.setBounds(10, 42, 96, 14);
+		panel_3.add(lblNewLabel_19);
+		
+		textField_13 = new JTextField();
+		textField_13.setBounds(60, 67, 96, 20);
+		panel_3.add(textField_13);
+		textField_13.setColumns(10);
+		
+		JLabel lblNewLabel_20 = new JLabel("Cargo: ");
+		lblNewLabel_20.setBounds(10, 98, 96, 22);
+		panel_3.add(lblNewLabel_20);
+		
+		textField_14 = new JTextField();
+		textField_14.setBounds(60, 131, 96, 20);
+		panel_3.add(textField_14);
+		textField_14.setColumns(10);
 	}
 	
 	private class TrataBotoes implements ActionListener {
@@ -214,7 +242,8 @@ public class CadastroPacientePlano extends JFrame {
 				Cadastro frame = new Cadastro();
 				frame.setVisible(true);
 			}
-			CadastroPacientePlano.this.dispose();
+			CadastroOutrosFunc.this.dispose();
 		}
 	}
 }
+

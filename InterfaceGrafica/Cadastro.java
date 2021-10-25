@@ -1,9 +1,18 @@
 package InterfaceGrafica;
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
 
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
-import javax.swing.border.*;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+
+import java.awt.FlowLayout;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.UIManager;
 
 public class Cadastro extends JFrame {
 
@@ -11,6 +20,9 @@ public class Cadastro extends JFrame {
 	private JButton botaoVoltar;
 	private JButton btnPacienteComPlano;
 	private JButton btnPacienteSemPlano;
+	private JButton btnMedico;
+	private JButton btnOutrosFunc;
+	
 
 	public Cadastro() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -38,12 +50,14 @@ public class Cadastro extends JFrame {
 		btnPacienteSemPlano.addActionListener(tratador);
 		contentPane.add(btnPacienteSemPlano);
 		
-		JButton btnMedico = new JButton("M\u00E9dico");
+		btnMedico = new JButton("M\u00E9dico");
 		btnMedico.setBounds(452, 120, 165, 23);
+		btnMedico.addActionListener(tratador);
 		contentPane.add(btnMedico);
 		
-		JButton btnOutrosFunc = new JButton("Outro Funcion\u00E1rio");
+		btnOutrosFunc = new JButton("Outro Funcion\u00E1rio");
 		btnOutrosFunc.setBounds(452, 174, 165, 23);
+		btnOutrosFunc.addActionListener(tratador);
 		contentPane.add(btnOutrosFunc);
 		
 		JLabel lblNewLabel_1 = new JLabel("Pacientes");
@@ -56,12 +70,9 @@ public class Cadastro extends JFrame {
 		lblNewLabel_2.setBounds(488, 80, 105, 14);
 		contentPane.add(lblNewLabel_2);
 		
-
-		botaoVoltar = new JButton("Voltar");
-		botaoVoltar.setBounds(243, 229, 204, 23);
-		botaoVoltar.setBackground(Color.RED);
-		botaoVoltar.setForeground(Color.WHITE);
+		botaoVoltar = new JButton("Voltar para a tela principal");
 		botaoVoltar.addActionListener(tratador);
+		botaoVoltar.setBounds(243, 229, 204, 23);
 		contentPane.add(botaoVoltar);
 	}
 	
@@ -74,6 +85,18 @@ public class Cadastro extends JFrame {
 			}
 			if(e.getSource() == btnPacienteComPlano) {
 				CadastroPacientePlano frame = new CadastroPacientePlano();
+				frame.setVisible(true);
+			}
+			if(e.getSource() == btnPacienteSemPlano) {
+				CadastroPacienteSemPlano frame = new CadastroPacienteSemPlano();
+				frame.setVisible(true);
+			}
+			if(e.getSource() == btnMedico) {
+				CadastroMedico frame = new CadastroMedico();
+				frame.setVisible(true);
+			}
+			if(e.getSource() == btnOutrosFunc) {
+				CadastroOutrosFunc frame = new CadastroOutrosFunc();
 				frame.setVisible(true);
 			}
 			Cadastro.this.dispose();
