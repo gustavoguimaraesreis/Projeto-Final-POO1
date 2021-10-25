@@ -15,16 +15,8 @@ public class DemaisFuncionarios extends Funcionario{
 	}
 
 	///Parte 3, letra g:
-	public static boolean setGratificacao(float gratificacao) {
-		if(Consulta.getNroConsultas() >= Consulta.getLimiteConsultas()) {
-			DemaisFuncionarios.gratificacao = gratificacao;
-			return true;
-		}
-		else {
-			System.out.println("O limite de consultas mensais não foi atingido");
-			DemaisFuncionarios.gratificacao = 0;
-			return false;
-		}
+	public static void setGratificacao(float gratificacao) {
+		DemaisFuncionarios.gratificacao = gratificacao;
 	}
 	public float getSalarioBase() {
 		return salarioBase;
@@ -57,9 +49,13 @@ public class DemaisFuncionarios extends Funcionario{
 
 	//parte 3, letra i:
 	public float calcularSalario() {
-		return salarioBase + gratificacao;
+		if(Consulta.getNroConsultas() >= Consulta.getLimiteConsultas()) 
+			return salarioBase + gratificacao;
+		
+		System.out.println("O limite de consultas mensais não foi atingido");
+		return salarioBase;
 	}
-	//Finalizar
+	
 	public void mostrarDados(){
 		super.mostrarDados();
         System.out.println("Salário base: " + getSalarioBase());

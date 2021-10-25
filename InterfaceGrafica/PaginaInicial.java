@@ -46,8 +46,7 @@ public class PaginaInicial extends JFrame {
 			if(e.getSource() == cadastro) {
 				Cadastro frame = new Cadastro();
 				frame.setVisible(true);
-			}
-			if(e.getSource() == btnBuscar){
+			}else if(e.getSource() == btnBuscar){
 				Buscar page = new Buscar();
 				page.setVisible(true);
 			}

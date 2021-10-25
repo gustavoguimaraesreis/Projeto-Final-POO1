@@ -9,7 +9,6 @@ public class Consulta implements Mostrar, Serializable{
 	private String medicamentosPaciente;
 	private String obsGeral;
 	private String receitaMedica;
-	private int metaConsultasMensais;
 	private Paciente paciente;
 	private Medico medico;
 	private DemaisFuncionarios funcionarioAgendou;
@@ -27,9 +26,6 @@ public class Consulta implements Mostrar, Serializable{
 	}
 	public void setMedicamentosPaciente(String medicamentosPaciente) {
 		this.medicamentosPaciente = medicamentosPaciente;
-	}
-	public void setMetaConsultasMensais(int metaConsultasMensais) {
-		this.metaConsultasMensais = metaConsultasMensais;
 	}
 	public void setObsGeral(String obsGeral) {
 		this.obsGeral = obsGeral;
@@ -64,9 +60,6 @@ public class Consulta implements Mostrar, Serializable{
 	public String getMedicamentosPaciente() {
 		return medicamentosPaciente;
 	}
-	public int getMetaConsultasMensais() {
-		return metaConsultasMensais;
-	}
 	public String getObsGeral() {
 		return obsGeral;
 	}
@@ -96,14 +89,9 @@ public class Consulta implements Mostrar, Serializable{
 		this.exames.add(Ex);
 	}
 
-	public Consulta (String data, String horario, String medicamentosPaciente, String obsGeral,
-	String receitaMedica, int metaConsultasMensais, Paciente paciente, Medico medico, DemaisFuncionarios funcionarioAgendou){
+	public Consulta (String data, String horario, Paciente paciente, Medico medico, DemaisFuncionarios funcionarioAgendou){
 		setData(data);
 		setHorario(horario);
-		setMedicamentosPaciente(medicamentosPaciente);
-		setObsGeral(obsGeral);
-		setReceitaMedica(receitaMedica);
-		setMetaConsultasMensais(metaConsultasMensais);
 		setPaciente(paciente);
 		setMedico(medico);
 		setFuncionarioAgendou(funcionarioAgendou);

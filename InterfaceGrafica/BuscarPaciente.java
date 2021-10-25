@@ -7,6 +7,8 @@ import javax.swing.border.*;
 
 import Codigo.DadosPacientes;
 import Codigo.Paciente;
+import Codigo.PacienteComPlano;
+import Codigo.PacienteSemPlano;
 
 public class BuscarPaciente extends JFrame {
 
@@ -61,6 +63,11 @@ public class BuscarPaciente extends JFrame {
 				Paciente P = null;
 				P = DadosPacientes.buscar(retorno);
 				if(P != null){
+					if(P instanceof PacienteComPlano){
+
+					}else if(P instanceof PacienteSemPlano){
+						
+					}
 					dispose();
 				}else{
 					JOptionPane.showMessageDialog(null, "Nenhum resultado encontrado!", "Erro", JOptionPane.ERROR_MESSAGE);

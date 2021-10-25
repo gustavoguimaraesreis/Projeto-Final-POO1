@@ -1,19 +1,9 @@
 package InterfaceGrafica;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-
-import java.awt.FlowLayout;
-import javax.swing.JLabel;
-import java.awt.Font;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import javax.swing.UIManager;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.border.*;
 
 public class Cadastro extends JFrame {
 
@@ -66,9 +56,12 @@ public class Cadastro extends JFrame {
 		lblNewLabel_2.setBounds(488, 80, 105, 14);
 		contentPane.add(lblNewLabel_2);
 		
-		botaoVoltar = new JButton("Voltar para a tela principal");
-		botaoVoltar.addActionListener(tratador);
+
+		botaoVoltar = new JButton("Voltar");
 		botaoVoltar.setBounds(243, 229, 204, 23);
+		botaoVoltar.setBackground(Color.RED);
+		botaoVoltar.setForeground(Color.WHITE);
+		botaoVoltar.addActionListener(tratador);
 		contentPane.add(botaoVoltar);
 	}
 	

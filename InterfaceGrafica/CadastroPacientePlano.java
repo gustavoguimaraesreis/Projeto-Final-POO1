@@ -1,21 +1,9 @@
 package InterfaceGrafica;
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.border.LineBorder;
-import java.awt.Color;
-import javax.swing.JLabel;
-import javax.swing.JComboBox;
-import javax.swing.JButton;
-import javax.swing.JCheckBox;
-import javax.swing.JTextField;
-import javax.swing.JTextArea;
-import java.awt.SystemColor;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.border.*;
 
 public class CadastroPacientePlano extends JFrame {
 
@@ -202,7 +190,11 @@ public class CadastroPacientePlano extends JFrame {
 		btnNewButton.setBounds(90, 425, 89, 23);
 		panel.add(btnNewButton);
 		
+
+
 		btnVoltar = new JButton("Voltar");
+		btnVoltar.setBackground(Color.RED);
+		btnVoltar.setForeground(Color.WHITE);
 		btnVoltar.setBounds(382, 425, 89, 23);
 		btnVoltar.addActionListener(tratador);
 		panel.add(btnVoltar);
