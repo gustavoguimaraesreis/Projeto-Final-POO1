@@ -5,13 +5,13 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.border.*;
 
-public class BuscarServiçoExtra extends JFrame {
+public class BuscarServicoExtra extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
 	private JButton btnVoltar, btnSubmeter;
 
-	public BuscarServiçoExtra() {
+	public BuscarServicoExtra() {
 		super("Buscar - Serviço Extra");
 		setAlwaysOnTop(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -53,7 +53,7 @@ public class BuscarServiçoExtra extends JFrame {
                 Buscar pg1 = new Buscar();
                 pg1.setVisible(true);
             }
-            BuscarServiçoExtra.this.dispose();
+            BuscarServicoExtra.this.dispose();
         }
     }
 }

@@ -66,18 +66,12 @@ public class Buscar extends JFrame {
 				BuscarConsulta pg = new BuscarConsulta();
 				pg.setVisible(true);
 			}else if (e.getSource() == btnServiçoExtra){
-				BuscarServiçoExtra pg = new BuscarServiçoExtra();
+				BuscarServicoExtra pg = new BuscarServicoExtra();
 				pg.setVisible(true);
 			}else{
 
 			}
 			Buscar.this.dispose();
 		}
-	}
-
-	public static void main(String[] args) {
-		Buscar Page = new Buscar();
-		Page.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		Page.setVisible(true);
 	}
 }
