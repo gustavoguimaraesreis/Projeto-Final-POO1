@@ -54,7 +54,7 @@ public class BuscarFuncionario extends JFrame {
                 Buscar pg1 = new Buscar();
                 pg1.setVisible(true);
             }
-            BuscarFuncionario.this.dispose();
+           	dispose();
         }
     }
 }

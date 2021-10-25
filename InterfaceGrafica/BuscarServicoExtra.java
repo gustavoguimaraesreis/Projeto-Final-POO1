@@ -24,7 +24,7 @@ public class BuscarServicoExtra extends JFrame {
 
 		TrataBotoes tratador = new TrataBotoes();
 		
-		JLabel lblInformeAbaixo = new JLabel("Informe, abaixo, o nome do serviço extra que deseja Buscar:");
+		JLabel lblInformeAbaixo = new JLabel("Informe, abaixo, o nome do serviço extra que deseja buscar:");
 		lblInformeAbaixo.setBounds(20, 12, 460, 15);
 		contentPane.add(lblInformeAbaixo);
 		
@@ -53,7 +53,7 @@ public class BuscarServicoExtra extends JFrame {
                 Buscar pg1 = new Buscar();
                 pg1.setVisible(true);
             }
-            BuscarServicoExtra.this.dispose();
+        	dispose();
         }
     }
 }

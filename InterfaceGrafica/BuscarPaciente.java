@@ -54,7 +54,7 @@ public class BuscarPaciente extends JFrame {
                 Buscar pg1 = new Buscar();
                 pg1.setVisible(true);
             }
-            BuscarPaciente.this.dispose();
+			dispose();
         }
     }
 }

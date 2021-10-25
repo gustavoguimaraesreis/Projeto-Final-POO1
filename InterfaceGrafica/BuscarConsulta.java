@@ -63,7 +63,7 @@ public class BuscarConsulta extends JFrame {
                 Buscar pg1 = new Buscar();
                 pg1.setVisible(true);
             }
-            BuscarConsulta.this.dispose();
+            dispose();
         }
     }
 }

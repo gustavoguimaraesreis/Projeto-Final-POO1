@@ -69,9 +69,10 @@ public class Buscar extends JFrame {
 				BuscarServicoExtra pg = new BuscarServicoExtra();
 				pg.setVisible(true);
 			}else{
-
+				PaginaInicial pg = new PaginaInicial();
+				pg.setVisible(true);
 			}
-			Buscar.this.dispose();
+			dispose();
 		}
 	}
 }
