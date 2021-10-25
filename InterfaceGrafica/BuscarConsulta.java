@@ -5,6 +5,9 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.border.*;
 
+import Codigo.Consulta;
+import Codigo.DadosConsulta;
+
 public class BuscarConsulta extends JFrame {
 
 	private JPanel contentPane;
@@ -61,8 +64,18 @@ public class BuscarConsulta extends JFrame {
             if(e.getSource() == btnVoltar){
                 Buscar pg1 = new Buscar();
                 pg1.setVisible(true);
-            }
-            dispose();
+				dispose();
+            }else if(e.getSource() == btnSubmeter){
+				String retorno = textField.getText();
+				String retorno_1 = textField_1.getText();
+				Consulta C = null;
+				C = DadosConsulta.buscar(retorno, retorno_1);
+				if(C != null){
+					dispose();
+				}else{
+					JOptionPane.showMessageDialog(null, "Nenhum resultado encontrado!", "Erro", JOptionPane.ERROR_MESSAGE);
+				}
+			}
         }
     }
 }

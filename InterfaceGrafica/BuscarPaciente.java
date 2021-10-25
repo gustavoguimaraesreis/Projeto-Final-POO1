@@ -5,6 +5,9 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.border.*;
 
+import Codigo.DadosPacientes;
+import Codigo.Paciente;
+
 public class BuscarPaciente extends JFrame {
 
 	private JPanel contentPane;
@@ -52,8 +55,17 @@ public class BuscarPaciente extends JFrame {
             if(e.getSource() == btnVoltar){
                 Buscar pg1 = new Buscar();
                 pg1.setVisible(true);
-            }
-			dispose();
+				dispose();
+            }else if(e.getSource() == btnSubmeter){
+				String retorno = textField.getText();
+				Paciente P = null;
+				P = DadosPacientes.buscar(retorno);
+				if(P != null){
+					dispose();
+				}else{
+					JOptionPane.showMessageDialog(null, "Nenhum resultado encontrado!", "Erro", JOptionPane.ERROR_MESSAGE);
+				}
+			}
         }
     }
 }
