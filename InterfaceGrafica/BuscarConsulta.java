@@ -48,7 +48,7 @@ public class BuscarConsulta extends JFrame {
 		btnVoltar.setBounds(331, 137, 117, 25);
 		btnVoltar.setBackground(Color.RED);
 		btnVoltar.setForeground(Color.WHITE);
-        btnVoltar.addActionListener(tratador);
+		btnVoltar.addActionListener(tratador);
 		contentPane.add(btnVoltar);
 		
 		btnSubmeter = new JButton("Submeter");

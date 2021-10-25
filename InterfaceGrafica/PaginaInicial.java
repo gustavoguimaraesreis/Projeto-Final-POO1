@@ -43,10 +43,10 @@ public class PaginaInicial extends JFrame {
 	}
 	private class TrataBotoes implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
-			//if(e.getSource() == cadastro) {
-			//	Cadastro frame = new Cadastro();
-			//	frame.setVisible(true);
-			if(e.getSource() == btnBuscar){
+			if(e.getSource() == cadastro) {
+				Cadastro frame = new Cadastro();
+				frame.setVisible(true);
+			}else if(e.getSource() == btnBuscar){
 				Buscar page = new Buscar();
 				page.setVisible(true);
 			}

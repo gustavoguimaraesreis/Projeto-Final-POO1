@@ -190,7 +190,11 @@ public class CadastroPacientePlano extends JFrame {
 		btnNewButton.setBounds(90, 425, 89, 23);
 		panel.add(btnNewButton);
 		
+
+
 		btnVoltar = new JButton("Voltar");
+		btnVoltar.setBackground(Color.RED);
+		btnVoltar.setForeground(Color.WHITE);
 		btnVoltar.setBounds(382, 425, 89, 23);
 		btnVoltar.addActionListener(tratador);
 		panel.add(btnVoltar);

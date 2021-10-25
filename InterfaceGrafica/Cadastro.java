@@ -56,9 +56,12 @@ public class Cadastro extends JFrame {
 		lblNewLabel_2.setBounds(488, 80, 105, 14);
 		contentPane.add(lblNewLabel_2);
 		
-		botaoVoltar = new JButton("Voltar para a tela principal");
-		botaoVoltar.addActionListener(tratador);
+
+		botaoVoltar = new JButton("Voltar");
 		botaoVoltar.setBounds(243, 229, 204, 23);
+		botaoVoltar.setBackground(Color.RED);
+		botaoVoltar.setForeground(Color.WHITE);
+		botaoVoltar.addActionListener(tratador);
 		contentPane.add(botaoVoltar);
 	}
 	
