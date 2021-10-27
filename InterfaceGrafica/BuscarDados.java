@@ -5,11 +5,11 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.border.*;
 
-import Codigo.Consulta;
 import Codigo.DadosConsulta;
 import Codigo.DadosFuncionarios;
 import Codigo.DadosPacientes;
 import Codigo.DadosServicosExtras;
+import Codigo.Consulta;
 import Codigo.Funcionario;
 import Codigo.Paciente;
 import Codigo.ServicosExtras;

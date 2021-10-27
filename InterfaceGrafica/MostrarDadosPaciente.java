@@ -11,7 +11,7 @@ import Codigo.PacienteSemPlano;
 import Codigo.Pessoas;
 
 public class MostrarDadosPaciente extends JFrame {
-
+    
 	private JPanel contentPane;
     private JPanel[] panelW = new JPanel[2];
     private JPanel[] panelB = new JPanel[2];
@@ -59,9 +59,9 @@ public class MostrarDadosPaciente extends JFrame {
 		lblRg.setBounds(12, 85, 315, 15);
 		panelW[0].add(lblRg);
 		
-		JLabel lblNewLabel = new JLabel("Sexo: " + P.getSexo());
-		lblNewLabel.setBounds(12, 120, 315, 15);
-		panelW[0].add(lblNewLabel);
+		JLabel lblSexo = new JLabel("Sexo: " + P.getSexo());
+		lblSexo.setBounds(12, 120, 315, 15);
+		panelW[0].add(lblSexo);
 		
 		JLabel lblDataDeNascimento = new JLabel("Data de Nascimento: " + P.getDataNascimento());
 		lblDataDeNascimento.setBounds(12, 155, 315, 15);
@@ -114,12 +114,26 @@ public class MostrarDadosPaciente extends JFrame {
             JLabel lblPeriodoDeCarencia = new JLabel("Periodo de Carencia: " + aux);
             lblPeriodoDeCarencia.setBounds(12, 85, 315, 15);
             panelW[1].add(lblPeriodoDeCarencia);
+
+            btnVisualizarEndereco = new JButton("Visualizar Endereço");
+            btnVisualizarEndereco.setBounds(27, 560, 205, 25);
+            contentPane.add(btnVisualizarEndereco);
+            btnVisualizarEndereco.addActionListener(tratador);
+    
+            btnVoltar = new JButton("Voltar");
+            btnVoltar.setBounds(246, 560, 123, 25);
+            btnVoltar.setBackground(Color.RED);
+            btnVoltar.setForeground(Color.WHITE);
+            btnVoltar.addActionListener(tratador);
+            contentPane.add(btnVoltar);
+
         }else if(P instanceof PacienteSemPlano){
+            setBounds(100, 100, 400, 610);
 
             panelW[1] = new JPanel();
             panelW[1].setLayout(null);
             panelW[1].setBackground(Color.WHITE);
-            panelW[1].setBounds(27, 420, 342, 120);
+            panelW[1].setBounds(27, 420, 342, 86);
             contentPane.add(panelW[1]);
 
             panelB[1] = new JPanel();
@@ -142,19 +156,19 @@ public class MostrarDadosPaciente extends JFrame {
             JLabel lblValor = new JLabel("Valor da ultima consulta: " + ((PacienteSemPlano) P).getDataUltimaConsulta());
             lblValor.setBounds(12, 50, 315, 15);
             panelW[1].add(lblValor);
+
+            btnVisualizarEndereco = new JButton("Visualizar Endereço");
+            btnVisualizarEndereco.setBounds(27, 530, 205, 25);
+            contentPane.add(btnVisualizarEndereco);
+            btnVisualizarEndereco.addActionListener(tratador);
+    
+            btnVoltar = new JButton("Voltar");
+            btnVoltar.setBounds(246, 530, 125, 25);
+            btnVoltar.setBackground(Color.RED);
+            btnVoltar.setForeground(Color.WHITE);
+            btnVoltar.addActionListener(tratador);
+            contentPane.add(btnVoltar);
         }
-
-        btnVisualizarEndereco = new JButton("Visualizar Endereço");
-		btnVisualizarEndereco.setBounds(27, 560, 205, 25);
-		contentPane.add(btnVisualizarEndereco);
-        btnVisualizarEndereco.addActionListener(tratador);
-
-        btnVoltar = new JButton("Voltar");
-		btnVoltar.setBounds(246, 560, 123, 25);
-		btnVoltar.setBackground(Color.RED);
-		btnVoltar.setForeground(Color.WHITE);
-        btnVoltar.addActionListener(tratador);
-		contentPane.add(btnVoltar);
 	}
 
     private class TrataBotoes implements ActionListener{
