@@ -57,16 +57,16 @@ public class Buscar extends JFrame {
 
 		public void actionPerformed (ActionEvent e){
 			if(e.getSource() == btnPaciente){
-				BuscarPaciente pg = new BuscarPaciente();
+				BuscarDados pg = new BuscarDados("P");
 				pg.setVisible(true);
 			}else if(e.getSource() == btnFuncionario){
-				BuscarFuncionario pg = new BuscarFuncionario();
+				BuscarDados pg = new BuscarDados("F");
 				pg.setVisible(true);
 			}else if (e.getSource() == btnConsulta){
-				BuscarConsulta pg = new BuscarConsulta();
+				BuscarDados pg = new BuscarDados("C");
 				pg.setVisible(true);
 			}else if (e.getSource() == btnServiçoExtra){
-				BuscarServicoExtra pg = new BuscarServicoExtra();
+				BuscarDados pg = new BuscarDados("SE");
 				pg.setVisible(true);
 			}else{
 				PaginaInicial pg = new PaginaInicial();
