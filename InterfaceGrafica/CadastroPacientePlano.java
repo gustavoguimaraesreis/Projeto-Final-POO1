@@ -1,5 +1,6 @@
 package InterfaceGrafica;
 import Codigo.Paciente;
+import Codigo.Endereco;
 import Codigo.DadosPacientes;
 import Codigo.PacienteComPlano;
 import java.awt.BorderLayout;
@@ -27,24 +28,24 @@ public class CadastroPacientePlano extends JFrame {
 	private JPanel contentPane;
 	private JButton btnVoltar;
 	private JButton btnEnviar;
-	private static JTextField textField_name;
-	private static JTextField textField_CPF;
-	private static JTextField textField_RG;
-	private static JTextField textField_dtNasc;
+	private JTextField textField_name;
+	private JTextField textField_CPF;
+	private JTextField textField_RG;
+	private JTextField textField_dtNasc;
 	private JCheckBox checkBx_masculino;
 	private JCheckBox checkBx_feminino;
 	private JCheckBox checkBox_solteiro;
 	private JCheckBox checkBox_casado;
 	private JCheckBox checkBox_divorciado;
 	private JCheckBox checkBox_pCarencia;
-	private static JTextField textField_rua;
-	private static JTextField textField_numero;
-	private static JTextField textField_bairro;
-	private static JTextField textField_comp;
-	private static JTextField textField_cidade;
-	private static JTextField textField_CEP;
-	private static JTextField textField_nrCarterinha;
-	private static JTextField textField_dtIngresso;
+	private JTextField textField_rua;
+	private JTextField textField_numero;
+	private JTextField textField_bairro;
+	private JTextField textField_comp;
+	private JTextField textField_cidade;
+	private JTextField textField_CEP;
+	private JTextField textField_nrCarterinha;
+	private JTextField textField_dtIngresso;
 	
 	private String CheckBox;
 	private String CheckBox_EstadoCivil;
@@ -283,25 +284,26 @@ public class CadastroPacientePlano extends JFrame {
 				frame.setVisible(true);
 			}
 			if(e.getSource() == btnEnviar) {
-				String nome = CadastroPacientePlano.textField_name.getText();
-				String cpf = CadastroPacientePlano.textField_CPF.getText();
-				String rg = CadastroPacientePlano.textField_RG.getText();
-				String dtNasc = CadastroPacientePlano.textField_dtNasc.getText();
-				String rua = CadastroPacientePlano.textField_rua.getText();
-				String numero = CadastroPacientePlano.textField_numero.getText();
-				String bairro = CadastroPacientePlano.textField_bairro.getText();
-				String comp = CadastroPacientePlano.textField_comp.getText();
-				String cidade = CadastroPacientePlano.textField_cidade.getText();
-				String cep = CadastroPacientePlano.textField_CEP.getText();
-				String nr_cart = CadastroPacientePlano.textField_nrCarterinha.getText();
+				String nome = textField_name.getText();
+				String cpf = textField_CPF.getText();
+				String rg = textField_RG.getText();
+				String dtNasc = textField_dtNasc.getText();
+				String rua = textField_rua.getText();
+				int numero = Integer.parseInt(textField_numero.getText());
+				String bairro = textField_bairro.getText();
+				String comp = textField_comp.getText();
+				String cidade = textField_cidade.getText();
+				int cep = Integer.parseInt(textField_CEP.getText());
+				String nr_cart = textField_nrCarterinha.getText();
 				int nrCart = Integer.parseInt(nr_cart);
-				String dtIngresso = CadastroPacientePlano.textField_dtIngresso.getText();
+				String dtIngresso = textField_dtIngresso.getText();
 				
 				
-				
+				Endereco end = new Endereco(rua, numero, comp, bairro, cep, cidade);
 				PacienteComPlano p = new PacienteComPlano(nome, cpf, rg, CheckBox, CheckBox_EstadoCivil,
 						dtNasc, dtCadastro, dtUltimaConsulta, nrCart, dtIngresso, CheckBox_pCarencia);
 				
+				p.setEndereco(end);
 				DadosPacientes.cadastrar(p);
 				
 				
