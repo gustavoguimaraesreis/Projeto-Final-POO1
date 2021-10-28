@@ -298,6 +298,7 @@ public class CadastroMedico extends JFrame {
 			if(e.getSource() == btnVoltar) {
 				Cadastro frame = new Cadastro();
 				frame.setVisible(true);
+				dispose();
 			}
 			if(e.getSource() == btnEnviar) {
 				String nome = textField_name.getText();
@@ -332,7 +333,6 @@ public class CadastroMedico extends JFrame {
 				Codigo.DadosFuncionarios.cadastrar(m);
 				
 			}
-			CadastroMedico.this.dispose();
 		}
 	}
 }

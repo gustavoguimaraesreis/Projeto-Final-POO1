@@ -304,7 +304,6 @@ public class CadastroOutrosFunc extends JFrame {
 				Codigo.DadosFuncionarios.cadastrar(df);
 				
 			}
-			CadastroOutrosFunc.this.dispose();
 		}
 	}
 }
