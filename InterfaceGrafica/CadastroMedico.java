@@ -1,37 +1,49 @@
 package InterfaceGrafica;
-
+import Codigo.Medico;
+import Codigo.PlanodeSaude;
+import Codigo.DadosFuncionarios;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.ArrayList;
+
 import javax.swing.border.*;
+
+
 
 public class CadastroMedico extends JFrame {
 
 	private JPanel contentPane;
 	private JButton btnVoltar;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
-	private JTextField textField_5;
-	private JTextField textField_6;
-	private JTextField textField_7;
-	private JTextField textField_8;
-	private JTextField textField_9;
-	private JTextField textField_10;
-	private JTextField textField_11;
-	private JTextField textField_12;
-	private JTextField textField_13;
-	private JTextField textField_14;
-	private JTextField textField_15;
-	private JTextField textField_16;
-	private JTextField textField_17;
+	private JButton btnEnviar;
+	private static JTextField textField_name;
+	private static JTextField textField_CPF;
+	private static JTextField textField_RG;
+	private JCheckBox checkBox_masculino;
+	private JCheckBox checkBox_feminino;
+	private static JTextField textField_dtNasc;
+	private static JTextField textField_rua;
+	private static JTextField textField_numero;
+	private static JTextField textField_bairro;
+	private static JTextField textField_comp;
+	private static JTextField textField_cidade;
+	private static JTextField textField_CEP;
+	private static JTextField textField_dtAdClinica;
+	private static JTextField textField_nrCarteiraTrabalho;
+	private static JTextField textField_usuario;
+	private static JTextField textField_senha;
+	private static JTextField textField_CRM;
+	private static JTextField textField_vlConsultPriva;
+	private static JTextField textField_vlConsultaPlano;
+	private static JTextField textField_Especialidade;
+	
+	private String CheckBox;
+	
 
 	
 	public CadastroMedico() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 700, 800);
+		setBounds(100, 100, 700, 900);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -40,12 +52,15 @@ public class CadastroMedico extends JFrame {
 		JPanel panel = new JPanel();
 		panel.setBackground(SystemColor.menu);
 		panel.setBorder(new LineBorder(Color.GRAY, 2));
-		panel.setBounds(10, 11, 666, 741);
+		panel.setBounds(10, 11, 666, 841);
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
-		//tratador dos botões
+		//tratador dos botões:
 		TrataBotoes tratador = new TrataBotoes();
+		
+		//tratador do checkbox:
+		TrataCheckBox trataChBox = new TrataCheckBox();
 		
 		JLabel lblNewLabel = new JLabel("Cadastro de M\u00E9dico");
 		lblNewLabel.setBounds(245, 11, 119, 14);
@@ -60,35 +75,37 @@ public class CadastroMedico extends JFrame {
 		panel.add(lblNewLabel_3);
 		
 		JLabel lblNewLabel_4 = new JLabel("Data de Nascimento: ");
-		lblNewLabel_4.setBounds(24, 147, 133, 14);
+		lblNewLabel_4.setBounds(24, 214, 133, 14);
 		panel.add(lblNewLabel_4);
 		
-		JCheckBox chckbxNewCheckBox = new JCheckBox("Masculino");
-		chckbxNewCheckBox.setBounds(58, 193, 99, 23);
-		panel.add(chckbxNewCheckBox);
+		checkBox_masculino = new JCheckBox("Masculino");
+		checkBox_masculino.setBounds(58, 260, 99, 23);
+		checkBox_masculino.addItemListener(trataChBox);
+		panel.add(checkBox_masculino);
 		
-		JCheckBox chckbxNewCheckBox_1 = new JCheckBox("Femino");
-		chckbxNewCheckBox_1.setBounds(58, 219, 99, 23);
-		panel.add(chckbxNewCheckBox_1);
+		checkBox_feminino = new JCheckBox("Femino");
+		checkBox_feminino.setBounds(58, 286, 99, 23);
+		checkBox_feminino.addItemListener(trataChBox);
+		panel.add(checkBox_feminino);
 		
 		JLabel lblNewLabel_5 = new JLabel("Sexo: ");
-		lblNewLabel_5.setBounds(44, 172, 49, 14);
+		lblNewLabel_5.setBounds(47, 239, 49, 14);
 		panel.add(lblNewLabel_5);
 		
-		textField = new JTextField();
-		textField.setBounds(71, 58, 220, 20);
-		panel.add(textField);
-		textField.setColumns(10);
+		textField_name = new JTextField();
+		textField_name.setBounds(71, 58, 220, 20);
+		panel.add(textField_name);
+		textField_name.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(71, 100, 220, 20);
-		panel.add(textField_1);
-		textField_1.setColumns(10);
+		textField_CPF = new JTextField();
+		textField_CPF.setBounds(71, 100, 220, 20);
+		panel.add(textField_CPF);
+		textField_CPF.setColumns(10);
 		
-		textField_2 = new JTextField();
-		textField_2.setBounds(178, 147, 96, 20);
-		panel.add(textField_2);
-		textField_2.setColumns(10);
+		textField_dtNasc = new JTextField();
+		textField_dtNasc.setBounds(195, 211, 96, 20);
+		panel.add(textField_dtNasc);
+		textField_dtNasc.setColumns(10);
 		
 		JLabel lblNewLabel_7 = new JLabel("Rua: ");
 		lblNewLabel_7.setBounds(382, 83, 49, 14);
@@ -102,43 +119,43 @@ public class CadastroMedico extends JFrame {
 		lblNewLabel_9.setBounds(370, 150, 49, 14);
 		panel.add(lblNewLabel_9);
 		
-		textField_3 = new JTextField();
-		textField_3.setBounds(441, 80, 179, 20);
-		panel.add(textField_3);
-		textField_3.setColumns(10);
+		textField_rua = new JTextField();
+		textField_rua.setBounds(441, 80, 179, 20);
+		panel.add(textField_rua);
+		textField_rua.setColumns(10);
 		
-		textField_4 = new JTextField();
-		textField_4.setBounds(441, 116, 179, 20);
-		panel.add(textField_4);
-		textField_4.setColumns(10);
+		textField_numero = new JTextField();
+		textField_numero.setBounds(441, 116, 179, 20);
+		panel.add(textField_numero);
+		textField_numero.setColumns(10);
 		
-		textField_5 = new JTextField();
-		textField_5.setBounds(441, 150, 179, 20);
-		panel.add(textField_5);
-		textField_5.setColumns(10);
+		textField_bairro = new JTextField();
+		textField_bairro.setBounds(441, 150, 179, 20);
+		panel.add(textField_bairro);
+		textField_bairro.setColumns(10);
 		
-		textField_6 = new JTextField();
-		textField_6.setBounds(441, 185, 179, 20);
-		panel.add(textField_6);
-		textField_6.setColumns(10);
+		textField_comp = new JTextField();
+		textField_comp.setBounds(441, 185, 179, 20);
+		panel.add(textField_comp);
+		textField_comp.setColumns(10);
 		
 		JLabel lblNewLabel_12 = new JLabel("Cidade: ");
 		lblNewLabel_12.setBounds(370, 219, 49, 14);
 		panel.add(lblNewLabel_12);
 		
-		textField_7 = new JTextField();
-		textField_7.setBounds(441, 216, 179, 20);
-		panel.add(textField_7);
-		textField_7.setColumns(10);
+		textField_cidade = new JTextField();
+		textField_cidade.setBounds(441, 216, 179, 20);
+		panel.add(textField_cidade);
+		textField_cidade.setColumns(10);
 		
 		JLabel lblNewLabel_13 = new JLabel("CEP: ");
 		lblNewLabel_13.setBounds(382, 260, 49, 14);
 		panel.add(lblNewLabel_13);
 		
-		textField_8 = new JTextField();
-		textField_8.setBounds(441, 257, 179, 20);
-		panel.add(textField_8);
-		textField_8.setColumns(10);
+		textField_CEP = new JTextField();
+		textField_CEP.setBounds(441, 257, 179, 20);
+		panel.add(textField_CEP);
+		textField_CEP.setColumns(10);
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBorder(new LineBorder(Color.LIGHT_GRAY));
@@ -154,12 +171,12 @@ public class CadastroMedico extends JFrame {
 		lblNewLabel_11.setBounds(25, 155, 91, 14);
 		panel_1.add(lblNewLabel_11);
 		
-		JButton btnNewButton = new JButton("Enviar");
-		btnNewButton.setBounds(44, 707, 89, 23);
-		panel.add(btnNewButton);
+		btnEnviar = new JButton("Enviar");
+		btnEnviar.setBounds(58, 784, 89, 23);
+		panel.add(btnEnviar);
 		
 		btnVoltar = new JButton("Voltar");
-		btnVoltar.setBounds(441, 707, 89, 23);
+		btnVoltar.setBounds(504, 784, 89, 23);
 		btnVoltar.addActionListener(tratador);
 		panel.add(btnVoltar);
 		
@@ -173,37 +190,37 @@ public class CadastroMedico extends JFrame {
 		lblNewLabel_14.setBounds(29, 66, 186, 14);
 		panel_2.add(lblNewLabel_14);
 		
-		textField_9 = new JTextField();
-		textField_9.setBounds(236, 63, 96, 20);
-		panel_2.add(textField_9);
-		textField_9.setColumns(10);
+		textField_dtAdClinica = new JTextField();
+		textField_dtAdClinica.setBounds(236, 63, 96, 20);
+		panel_2.add(textField_dtAdClinica);
+		textField_dtAdClinica.setColumns(10);
 		
 		JLabel lblNewLabel_15 = new JLabel("N\u00FAmero da Carteira de Trabalho:");
 		lblNewLabel_15.setBounds(29, 97, 195, 14);
 		panel_2.add(lblNewLabel_15);
 		
-		textField_10 = new JTextField();
-		textField_10.setBounds(236, 94, 96, 20);
-		panel_2.add(textField_10);
-		textField_10.setColumns(10);
+		textField_nrCarteiraTrabalho = new JTextField();
+		textField_nrCarteiraTrabalho.setBounds(236, 94, 96, 20);
+		panel_2.add(textField_nrCarteiraTrabalho);
+		textField_nrCarteiraTrabalho.setColumns(10);
 		
 		JLabel lblNewLabel_16 = new JLabel("Usu\u00E1rio: ");
 		lblNewLabel_16.setBounds(125, 128, 72, 14);
 		panel_2.add(lblNewLabel_16);
 		
-		textField_11 = new JTextField();
-		textField_11.setBounds(236, 125, 96, 20);
-		panel_2.add(textField_11);
-		textField_11.setColumns(10);
+		textField_usuario = new JTextField();
+		textField_usuario.setBounds(236, 125, 96, 20);
+		panel_2.add(textField_usuario);
+		textField_usuario.setColumns(10);
 		
 		JLabel lblNewLabel_17 = new JLabel("Senha: ");
 		lblNewLabel_17.setBounds(135, 159, 72, 14);
 		panel_2.add(lblNewLabel_17);
 		
-		textField_12 = new JTextField();
-		textField_12.setBounds(236, 156, 96, 20);
-		panel_2.add(textField_12);
-		textField_12.setColumns(10);
+		textField_senha = new JTextField();
+		textField_senha.setBounds(236, 156, 96, 20);
+		panel_2.add(textField_senha);
+		textField_senha.setColumns(10);
 		
 		JLabel lblNewLabel_10 = new JLabel("Dados do funcin\u00E1rio");
 		lblNewLabel_10.setBounds(111, 23, 127, 14);
@@ -211,7 +228,7 @@ public class CadastroMedico extends JFrame {
 		
 		JPanel panel_3 = new JPanel();
 		panel_3.setBorder(new LineBorder(new Color(192, 192, 192)));
-		panel_3.setBounds(24, 270, 219, 426);
+		panel_3.setBounds(24, 330, 219, 426);
 		panel.add(panel_3);
 		panel_3.setLayout(null);
 		
@@ -223,46 +240,55 @@ public class CadastroMedico extends JFrame {
 		lblNewLabel_19.setBounds(10, 42, 49, 14);
 		panel_3.add(lblNewLabel_19);
 		
-		textField_13 = new JTextField();
-		textField_13.setBounds(60, 67, 96, 20);
-		panel_3.add(textField_13);
-		textField_13.setColumns(10);
+		textField_CRM = new JTextField();
+		textField_CRM.setBounds(60, 67, 96, 20);
+		panel_3.add(textField_CRM);
+		textField_CRM.setColumns(10);
 		
 		JLabel lblNewLabel_20 = new JLabel("Valor da consulta (privado): ");
 		lblNewLabel_20.setBounds(10, 98, 173, 14);
 		panel_3.add(lblNewLabel_20);
 		
-		textField_14 = new JTextField();
-		textField_14.setBounds(60, 131, 96, 20);
-		panel_3.add(textField_14);
-		textField_14.setColumns(10);
+		textField_vlConsultPriva = new JTextField();
+		textField_vlConsultPriva.setBounds(60, 131, 96, 20);
+		panel_3.add(textField_vlConsultPriva);
+		textField_vlConsultPriva.setColumns(10);
 		
 		JLabel lblNewLabel_21 = new JLabel("Valor da Consulta (plano): ");
 		lblNewLabel_21.setBounds(10, 174, 173, 14);
 		panel_3.add(lblNewLabel_21);
 		
-		textField_15 = new JTextField();
-		textField_15.setBounds(60, 210, 96, 20);
-		panel_3.add(textField_15);
-		textField_15.setColumns(10);
+		textField_vlConsultaPlano = new JTextField();
+		textField_vlConsultaPlano.setBounds(60, 210, 96, 20);
+		panel_3.add(textField_vlConsultaPlano);
+		textField_vlConsultaPlano.setColumns(10);
 		
 		JLabel lblNewLabel_22 = new JLabel("Especialidade(s): ");
 		lblNewLabel_22.setBounds(10, 254, 146, 14);
 		panel_3.add(lblNewLabel_22);
 		
-		textField_16 = new JTextField();
-		textField_16.setBounds(60, 290, 96, 20);
-		panel_3.add(textField_16);
-		textField_16.setColumns(10);
+		textField_Especialidade = new JTextField();
+		textField_Especialidade.setBounds(60, 290, 96, 20);
+		panel_3.add(textField_Especialidade);
+		textField_Especialidade.setColumns(10);
 		
-		JLabel lblNewLabel_23 = new JLabel("Planos de Sa\u00FAde atendidos: ");
-		lblNewLabel_23.setBounds(10, 340, 183, 14);
-		panel_3.add(lblNewLabel_23);
+		JLabel lblNewLabel_1 = new JLabel("RG: ");
+		lblNewLabel_1.setBounds(24, 150, 49, 14);
+		panel.add(lblNewLabel_1);
 		
-		textField_17 = new JTextField();
-		textField_17.setBounds(60, 381, 96, 20);
-		panel_3.add(textField_17);
-		textField_17.setColumns(10);
+		textField_RG = new JTextField();
+		textField_RG.setBounds(71, 150, 220, 20);
+		panel.add(textField_RG);
+		textField_RG.setColumns(10);
+	}
+	
+	private class TrataCheckBox implements ItemListener {
+		public void itemStateChanged(ItemEvent e) {
+			if(checkBox_masculino.isSelected())
+				CheckBox = "Masculino";
+			if(checkBox_feminino.isSelected())
+				CheckBox = "Feminino";		
+		}
 	}
 	
 	private class TrataBotoes implements ActionListener {
@@ -270,6 +296,37 @@ public class CadastroMedico extends JFrame {
 			if(e.getSource() == btnVoltar) {
 				Cadastro frame = new Cadastro();
 				frame.setVisible(true);
+			}
+			if(e.getSource() == btnEnviar) {
+				String nome = CadastroMedico.textField_name.getText();
+				String cpf = CadastroMedico.textField_CPF.getText();
+				String rg = CadastroMedico.textField_RG.getText();
+				String dtNasc = CadastroMedico.textField_dtNasc.getText();
+				String rua = CadastroMedico.textField_rua.getText();
+				String numero = CadastroMedico.textField_numero.getText();
+				String bairro = CadastroMedico.textField_bairro.getText();
+				String comp = CadastroMedico.textField_comp.getText();
+				String cidade = CadastroMedico.textField_cidade.getText();
+				String cep = CadastroMedico.textField_CEP.getText();
+				String crm = CadastroMedico.textField_CRM.getText();
+				String vlConsultaPrivado = CadastroMedico.textField_vlConsultPriva.getText();
+				float vlConPrivado = Float.parseFloat(vlConsultaPrivado);
+				String vlConsultaPlano = CadastroMedico.textField_vlConsultaPlano.getText();
+				float vlConPlano = Float.parseFloat(vlConsultaPlano);
+				ArrayList<String> Especialidades = new ArrayList<String>();
+				Especialidades.add(CadastroMedico.textField_Especialidade.getText());
+				String dtAdClinica = CadastroMedico.textField_dtAdClinica.getText();
+				String nrCarteiraTrabalho = CadastroMedico.textField_nrCarteiraTrabalho.getText();
+				int nrCarTrab = Integer.parseInt(nrCarteiraTrabalho);
+				String usuario = CadastroMedico.textField_usuario.getText();
+				String senha = CadastroMedico.textField_senha.getText();
+				
+				//criar o objeto 
+				Medico m = new Medico(nome, cpf, rg, CheckBox, dtAdClinica, dtNasc, nrCarTrab,
+						usuario, senha, crm, Especialidades, 0, vlConPrivado, 
+						vlConPlano);
+				Codigo.DadosFuncionarios.cadastrar(m);
+				
 			}
 			CadastroMedico.this.dispose();
 		}

@@ -45,6 +45,13 @@ public class PacienteComPlano extends Paciente {
 		setDataIngressoPlano(dataIngressoPlano);
 		setPlanosPossuidos(planosPossuidos);
 	}
+	public PacienteComPlano (String nome, String cpf, String rg, String sexo, String estadoCivil, String dtNascimento, String dtCadastro,
+	String dataUltimaConsulta, int nroCarteirinha, String dataIngressoPlano, boolean periodoCarencia){
+		super(nome, cpf, rg, sexo, estadoCivil, dtNascimento, dtCadastro, dataUltimaConsulta);
+		setNroCarteirinha(nroCarteirinha);
+		setPeriodoCarencia(periodoCarencia);
+		setDataIngressoPlano(dataIngressoPlano);
+	}
 
 	public void mostrarDados(){
 		super.mostrarDados();

@@ -80,6 +80,18 @@ public class Medico extends Funcionario {
 		setValorConsulta_plano(valorConsulta_plano);
 		setPlanosAtendidos(planosAtendidos);
 	}
+	//método para usar na interface grafica:
+	public Medico (String nome, String cpf, String rg, String sexo, String dtAdClinica, String dtNascimento, int nroCarTrabalho, String usuario,
+			String senha, String CRM, ArrayList<String> especialidades, int nroConsultas, float valorConsulta_privado, float valorConsulta_plano){
+				super(nome, cpf, rg, sexo, dtAdClinica, dtNascimento, nroCarTrabalho, usuario, senha);
+				setCRM(CRM);
+				setEspecialidades(especialidades);
+				setNroConsultas(nroConsultas);
+				setValorConsulta_privado(valorConsulta_privado);
+				setValorConsulta_plano(valorConsulta_plano);
+				ArrayList<PlanodeSaude> planodeSaudesVazio = new ArrayList<PlanodeSaude>();
+				setPlanosAtendidos(planodeSaudesVazio);
+			}
 
 	//Construtor apenas com cpf e os planos atendidos
 	public Medico (String cpf, ArrayList<PlanodeSaude> planosAtendidos){
