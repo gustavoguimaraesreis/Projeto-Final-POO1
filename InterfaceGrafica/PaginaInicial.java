@@ -49,6 +49,9 @@ public class PaginaInicial extends JFrame {
 			}else if(e.getSource() == btnBuscar){
 				Buscar page = new Buscar();
 				page.setVisible(true);
+			}else if(e.getSource() == btnRemover){
+				Remover page = new Remover();
+				page.setVisible(true);
 			}
 			dispose();
 		}

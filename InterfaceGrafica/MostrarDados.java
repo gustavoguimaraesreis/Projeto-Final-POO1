@@ -297,6 +297,7 @@ public class MostrarDados extends JFrame {
 
         }else if(O instanceof Consulta){
             this.type = "C";
+            setTitle("Buscar - Consulta Encontrada");
             setBounds(100, 100, 600, 450);
 
             panelW[0] = new JPanel();
@@ -359,7 +360,7 @@ public class MostrarDados extends JFrame {
 
         }else if(O instanceof ServicosExtras){
             this.type = "SE";
-
+            setTitle("Buscar - Serviço Encontrado");
             setBounds(100, 100, 335, 270);
 
             panelW[0] = new JPanel();
