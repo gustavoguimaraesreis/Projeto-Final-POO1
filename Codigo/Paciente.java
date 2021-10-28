@@ -46,7 +46,7 @@ public abstract class Paciente extends Pessoas implements Mostrar, Serializable{
 		setDataUltimaConsulta(dataUltimaConsulta);
 	}
 
-	public void bonificacaoAniversarial(String dataAtual){
+	public boolean bonificacaoAniversarial(String dataAtual){
 		String aux = super.getDataNascimento();
 		boolean check = true;
 		for(int i=0; i<5; i++)
@@ -58,6 +58,8 @@ public abstract class Paciente extends Pessoas implements Mostrar, Serializable{
 			System.out.println("Parabéns! O seu aniversario chegou e você tem direito a escolher um dos serviços abaixo, estéticos ou de relexamento, e recebera um desconto de 50% no valor de uma sessão.\n");
 			DadosServicosExtras.listar();
 		}
+
+		return check;
 	}
 	
 	public void mostrarDados(){

@@ -65,9 +65,9 @@ public class BuscarDados extends JFrame {
             JLabel lblInformeAbaixo = new JLabel("Informe, abaixo, a data da consulta que deseja buscar:");
             lblInformeAbaixo.setBounds(20, 12, 440, 15);
             contentPane.add(lblInformeAbaixo);
-            JLabel lblInformeAbaixoO = new JLabel("Informe, abaixo, o horario da consulta que deseja buscar:");
-		    lblInformeAbaixoO.setBounds(20, 70, 440, 15);
-		    contentPane.add(lblInformeAbaixoO);
+                JLabel lblInformeAbaixo_1 = new JLabel("Informe, abaixo, o horario da consulta que deseja buscar:");
+		    lblInformeAbaixo_1.setBounds(20, 70, 440, 15);
+		    contentPane.add(lblInformeAbaixo_1);
             textField_1 = new JTextField();
 		    textField_1.setColumns(10);
 		    textField_1.setBounds(20, 97, 158, 19);
@@ -87,8 +87,8 @@ public class BuscarDados extends JFrame {
 
         public void actionPerformed (ActionEvent e){
             if(e.getSource() == btnVoltar){
-                Buscar pg1 = new Buscar();
-                pg1.setVisible(true);
+                Buscar pg = new Buscar();
+                pg.setVisible(true);
 				dispose();
             }else if(e.getSource() == btnSubmeter){
                 Object Aux = null;

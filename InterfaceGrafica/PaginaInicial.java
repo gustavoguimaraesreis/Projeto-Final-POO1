@@ -12,6 +12,7 @@ public class PaginaInicial extends JFrame {
 	private JButton btnCadastrar, btnBuscar, btnRemover, btnRealizarConsulta, btnCalcularSalario, btnBonificacaoDeAniversario;
 
 	public PaginaInicial() {
+		super("Pagina Inicial - Opções do Sistema");
 		setAlwaysOnTop(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 400, 350);
@@ -106,6 +107,9 @@ public class PaginaInicial extends JFrame {
 				page.setVisible(true);
 			}else if(e.getSource() == btnRemover){
 				Remover page = new Remover();
+				page.setVisible(true);
+			}else if(e.getSource() == btnBonificacaoDeAniversario){
+				BonificacaoDeAniversario page = new BonificacaoDeAniversario();
 				page.setVisible(true);
 			}
 			dispose();

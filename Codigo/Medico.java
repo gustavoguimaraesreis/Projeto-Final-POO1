@@ -125,7 +125,7 @@ public class Medico extends Funcionario {
 		this.SomaConsultasMes = 0.00f;
 	}
 
-	public void bonificacaoAniversarial(String dataAtual){
+	public boolean bonificacaoAniversarial(String dataAtual){
 		String aux = super.getDataNascimento();
 		boolean check = true;
 		for(int i=0; i<5; i++)
@@ -136,6 +136,8 @@ public class Medico extends Funcionario {
 			System.out.println("Parabéns! O seu aniversario chegou e você tem direito a escolher um dos serviços abaixo, estéticos ou de relexamento, para realizar uma sessão gratuita junto ao seu conjuge.\n");
 			DadosServicosExtras.listar();
 		}
+
+		return check;
 	}
 	
 	public void mostrarDados(){

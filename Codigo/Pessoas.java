@@ -97,5 +97,5 @@ public abstract class Pessoas {
 		setDataNascimento(dataNascimento);
 	}
 
-	public abstract void bonificacaoAniversarial(String dataAtual);
+	public abstract boolean bonificacaoAniversarial(String dataAtual);
 }
