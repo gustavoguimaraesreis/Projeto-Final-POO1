@@ -9,10 +9,6 @@ import Codigo.DadosConsulta;
 import Codigo.DadosFuncionarios;
 import Codigo.DadosPacientes;
 import Codigo.DadosServicosExtras;
-import Codigo.Consulta;
-import Codigo.Funcionario;
-import Codigo.Paciente;
-import Codigo.ServicosExtras;
 
 public class BuscarDados extends JFrame {
 
@@ -20,8 +16,7 @@ public class BuscarDados extends JFrame {
 	private JTextField textField, textField_1;
 	private JButton btnVoltar, btnSubmeter;
 
-	public BuscarDados(String Objeto) {
-		super("Buscar - Paciente");
+	public BuscarDados(String searchType) {
 		setAlwaysOnTop(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 470, 150);
@@ -30,7 +25,7 @@ public class BuscarDados extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		TrataBotoes tratador = new TrataBotoes(Objeto);
+		TrataBotoes tratador = new TrataBotoes(searchType);
 
         textField = new JTextField();
 		textField.setBounds(20, 39, 158, 19);
@@ -49,19 +44,23 @@ public class BuscarDados extends JFrame {
 		contentPane.add(btnSubmeter);
         btnSubmeter.addActionListener(tratador);
 
-        if(Objeto.equals("P")){
+        if(searchType.equals("P")){
+            setTitle("Buscar - Paciente");
             JLabel lblInformeAbaixo = new JLabel("Informe, abaixo, o CPF do paciente que deseja buscar:");
             lblInformeAbaixo.setBounds(20, 12, 440, 15);
             contentPane.add(lblInformeAbaixo);
-        }else if(Objeto.equals("F")){
+        }else if(searchType.equals("F")){
+            setTitle("Buscar - Funcionario");
             JLabel lblInformeAbaixo = new JLabel("Informe, abaixo, o CPF do funcionario que deseja buscar:");
 		    lblInformeAbaixo.setBounds(20, 12, 440, 15);
 		    contentPane.add(lblInformeAbaixo);
-        }else if(Objeto.equals("SE")){
+        }else if(searchType.equals("SE")){
+            setTitle("Buscar - Serviço Extra");
             JLabel lblInformeAbaixo = new JLabel("Informe, abaixo, o nome do serviço extra que deseja buscar:");
             lblInformeAbaixo.setBounds(20, 12, 460, 15);
             contentPane.add(lblInformeAbaixo);
-        }else if(Objeto.equals("C")){
+        }else if(searchType.equals("C")){
+            setTitle("Buscar - Consulta");
             setBounds(100, 100, 470, 220);
             JLabel lblInformeAbaixo = new JLabel("Informe, abaixo, a data da consulta que deseja buscar:");
             lblInformeAbaixo.setBounds(20, 12, 440, 15);
@@ -80,10 +79,10 @@ public class BuscarDados extends JFrame {
 
     private class TrataBotoes implements ActionListener{
 
-        private static String Objeto;
+        private String searchType;
 
-        public TrataBotoes(String Objeto){
-            TrataBotoes.Objeto = Objeto;
+        public TrataBotoes(String searchType){
+            this.searchType = searchType;
         }
 
         public void actionPerformed (ActionEvent e){
@@ -94,29 +93,23 @@ public class BuscarDados extends JFrame {
             }else if(e.getSource() == btnSubmeter){
                 Object Aux = null;
                 
-                if(Objeto.equals("P")){
+                if(searchType.equals("P"))
                     Aux = DadosPacientes.buscar(textField.getText());
-                    if(Aux != null){
-                        MostrarDadosPaciente pg = new MostrarDadosPaciente(((Paciente) Aux));
-                        pg.setVisible(true);    
-                    }
-                }else if(Objeto.equals("F")){
-                    String retorno = textField.getText();
-                    Aux = DadosFuncionarios.buscar(retorno);
+                    
+                else if(searchType.equals("F"))
+                    Aux = DadosFuncionarios.buscar(textField.getText());
 
-                }else if(Objeto.equals("SE")){
-                    String retorno = textField.getText();
-                    Aux = DadosServicosExtras.buscar(retorno);
+                else if(searchType.equals("SE"))
+                    Aux = DadosServicosExtras.buscar(textField.getText());
 
-                }else if(Objeto.equals("C")){
-                    String[] retorno = new String[2];
-                    retorno[0] = textField.getText();
-                    retorno[1] = textField_1.getText();
-                    Aux = DadosConsulta.buscar(retorno[0], retorno[1]);
-
-                }
-                if(Aux != null) dispose();
-                else JOptionPane.showMessageDialog(null, "Nenhum resultado encontrado!", "Erro", JOptionPane.ERROR_MESSAGE);
+                else if(searchType.equals("C"))
+                    Aux = DadosConsulta.buscar(textField.getText(), textField_1.getText());
+                
+                if(Aux != null){
+                    MostrarDados pg = new MostrarDados(Aux);
+                    pg.setVisible(true);   
+                    dispose(); 
+                }else JOptionPane.showMessageDialog(null, "Nenhum resultado encontrado!", "Erro", JOptionPane.ERROR_MESSAGE);
 			}
         }
     }
