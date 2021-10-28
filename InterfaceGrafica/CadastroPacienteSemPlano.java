@@ -5,30 +5,30 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.border.*;
 
+import Codigo.Endereco;
 import Codigo.PacienteSemPlano;
-
 
 public class CadastroPacienteSemPlano extends JFrame {
 
 	private JPanel contentPane;
 	private JButton btnEnviar;
 	private JButton btnVoltar;
-	private static JTextField textField_name;
-	private static JTextField textField_CPF;
-	private static JTextField textField_RG;
-	private static JTextField textField_dtNasc;
+	private JTextField textField_name;
+	private JTextField textField_CPF;
+	private JTextField textField_RG;
+	private JTextField textField_dtNasc;
 	private JCheckBox checkBox_masculino;
 	private JCheckBox checkBox_feminino;
 	private JCheckBox checkBox_solteiro;
 	private JCheckBox checkBox_casado;
 	private JCheckBox checkBox_divorciado;
-	private static JTextField textField_rua;
-	private static JTextField textField_numero;
-	private static JTextField textField_bairro;
-	private static JTextField textField_comp;
-	private static JTextField textField_cidade;
-	private static JTextField textField_CEP;
-	private static JTextField textField_desconto;
+	private JTextField textField_rua;
+	private JTextField textField_numero;
+	private JTextField textField_bairro;
+	private JTextField textField_comp;
+	private JTextField textField_cidade;
+	private JTextField textField_CEP;
+	private JTextField textField_desconto;
 
 	private String CheckBox;
 	private String CheckBox_EstadoCivil;
@@ -54,6 +54,7 @@ public class CadastroPacienteSemPlano extends JFrame {
 		
 		//tratador dos botões
 		TrataBotoes tratador = new TrataBotoes();
+		TrataCheckBox tratador2 = new TrataCheckBox();
 		
 		JLabel lblNewLabel = new JLabel("Cadastro de Paciente sem Plano de Sa\u00FAde");
 		lblNewLabel.setBounds(173, 7, 258, 14);
@@ -74,10 +75,12 @@ public class CadastroPacienteSemPlano extends JFrame {
 		checkBox_masculino = new JCheckBox("Masculino");
 		checkBox_masculino.setBounds(58, 251, 99, 23);
 		panel.add(checkBox_masculino);
+		checkBox_masculino.addItemListener(tratador2);
 		
 		checkBox_feminino = new JCheckBox("Femino");
 		checkBox_feminino.setBounds(58, 277, 99, 23);
 		panel.add(checkBox_feminino);
+		checkBox_feminino.addItemListener(tratador2);
 		
 		JLabel lblNewLabel_5 = new JLabel("Sexo: ");
 		lblNewLabel_5.setBounds(24, 230, 49, 14);
@@ -164,6 +167,7 @@ public class CadastroPacienteSemPlano extends JFrame {
 		
 		btnEnviar = new JButton("Enviar");
 		btnEnviar.setBounds(36, 465, 89, 23);
+		btnEnviar.addActionListener(tratador);
 		panel.add(btnEnviar);
 		
 		btnVoltar = new JButton("Voltar");
@@ -187,14 +191,17 @@ public class CadastroPacienteSemPlano extends JFrame {
 		checkBox_solteiro = new JCheckBox("Solteiro");
 		checkBox_solteiro.setBounds(58, 358, 99, 23);
 		panel.add(checkBox_solteiro);
+		checkBox_solteiro.addItemListener(tratador2);
 		
 		checkBox_casado = new JCheckBox("Casado");
 		checkBox_casado.setBounds(58, 396, 99, 23);
 		panel.add(checkBox_casado);
+		checkBox_casado.addItemListener(tratador2);
 		
 		checkBox_divorciado = new JCheckBox("Divorciado");
 		checkBox_divorciado.setBounds(58, 422, 99, 23);
 		panel.add(checkBox_divorciado);
+		checkBox_divorciado.addItemListener(tratador2);
 		
 		lblNewLabel_14 = new JLabel("RG: ");
 		lblNewLabel_14.setBounds(24, 163, 49, 14);
@@ -216,7 +223,7 @@ public class CadastroPacienteSemPlano extends JFrame {
 			if(checkBox_casado.isSelected())
 				CheckBox_EstadoCivil = "Casado";
 			if(checkBox_divorciado.isSelected())
-				CheckBox_EstadoCivil = "Divorciado";	
+				CheckBox_EstadoCivil = "Divorciado";
 		}
 	}
 	
@@ -225,28 +232,27 @@ public class CadastroPacienteSemPlano extends JFrame {
 			if(e.getSource() == btnVoltar) {
 				Cadastro frame = new Cadastro();
 				frame.setVisible(true);
-			}
-			if(e.getSource() == btnEnviar) {
-				String nome = CadastroPacienteSemPlano.textField_name.getText();
-				String cpf = CadastroPacienteSemPlano.textField_CPF.getText();
-				String rg = CadastroPacienteSemPlano.textField_RG.getText();
-				String dtNasc = CadastroPacienteSemPlano.textField_dtNasc.getText();
-				String desconto = CadastroPacienteSemPlano.textField_desconto.getText();
-				String rua = CadastroPacienteSemPlano.textField_rua.getText();
-				String numero = CadastroPacienteSemPlano.textField_numero.getText();
-				String bairro = CadastroPacienteSemPlano.textField_bairro.getText();
-				String comp = CadastroPacienteSemPlano.textField_comp.getText();
-				String cidade = CadastroPacienteSemPlano.textField_cidade.getText();
-				String cep = CadastroPacienteSemPlano.textField_CEP.getText();
+				dispose();
+			}else if(e.getSource() == btnEnviar) {
+				String nome = textField_name.getText();
+				String cpf = textField_CPF.getText();
+				String rg = textField_RG.getText();
+				String dtNasc = textField_dtNasc.getText();
+				String desconto = textField_desconto.getText();
+				String rua = textField_rua.getText();
+				int numero = Integer.parseInt(textField_numero.getText());  
+				String bairro = textField_bairro.getText();
+				String comp = textField_comp.getText();
+				String cidade = textField_cidade.getText();
+				int cep = Integer.parseInt(textField_CEP.getText());
+				Endereco end = new Endereco(rua, numero, comp, bairro, cep, cidade);
 				
 				PacienteSemPlano p = new PacienteSemPlano(nome, cpf, rg, CheckBox, CheckBox_EstadoCivil,
 										dtNasc, dtCadastro, dtUltimaConsulta, desconto, 0.00f);
-				
+
+				p.setEndereco(end);
 				Codigo.DadosPacientes.cadastrar(p);
-				
-				
 			}
-			CadastroPacienteSemPlano.this.dispose();
 		}
 	}
 }

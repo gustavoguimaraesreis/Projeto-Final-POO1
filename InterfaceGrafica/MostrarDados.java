@@ -142,17 +142,17 @@ public class MostrarDados extends JFrame {
                 }else if(O instanceof PacienteSemPlano){
                     setBounds(100, 100, 400, 610);
 
-                    panelW[0] = new JPanel();
-                    panelW[0].setLayout(null);
-                    panelW[0].setBackground(Color.WHITE);
-                    panelW[0].setBounds(27, 420, 342, 86);
-                    contentPane.add(panelW[0]);
+                    panelW[1] = new JPanel();
+                    panelW[1].setLayout(null);
+                    panelW[1].setBackground(Color.WHITE);
+                    panelW[1].setBounds(27, 420, 342, 86);
+                    contentPane.add(panelW[1]);
         
-                    panelB[0] = new JPanel();
-                    panelB[0].setLayout(null);
-                    panelB[0].setBackground(Color.BLACK);
-                    panelB[0].setBounds(27, 390, 210, 30);
-                    contentPane.add(panelB[0]);
+                    panelB[1] = new JPanel();
+                    panelB[1].setLayout(null);
+                    panelB[1].setBackground(Color.BLACK);
+                    panelB[1].setBounds(27, 390, 210, 30);
+                    contentPane.add(panelB[1]);
                     
                     JLabel lblDadosAdicionais = new JLabel("Dados Adicionais");
                     lblDadosAdicionais.setForeground(Color.WHITE);

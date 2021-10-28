@@ -1,3 +1,4 @@
+/*
 import Codigo.Consulta;
 import Codigo.DadosConsulta;
 import Codigo.DadosFuncionarios;
@@ -12,11 +13,13 @@ import Codigo.PlanodeSaude;
 import Codigo.ServicosExtras;
 
 import java.util.*;
+*/
 
 import InterfaceGrafica.PaginaInicial;
 public class Principal {
 	public static void main(String[] args) {
-		//Testes//
+		/*
+		//Testes
 		Endereco e = new Endereco("a", 12, "b", "c", 34, "d");
 
 		ArrayList <PlanodeSaude> planos = new ArrayList<PlanodeSaude>();
@@ -50,6 +53,7 @@ public class Principal {
 		DadosConsulta.cadastrar(c);
 		DadosServicosExtras.cadastrar(se);
 		//Fim dos testes
+		*/
 
 		PaginaInicial page = new PaginaInicial();
 		page.setVisible(true);
