@@ -1,5 +1,6 @@
 package InterfaceGrafica;
 import Codigo.Medico;
+import Codigo.Endereco;
 import Codigo.PlanodeSaude;
 import Codigo.DadosFuncionarios;
 import javax.swing.*;
@@ -16,26 +17,26 @@ public class CadastroMedico extends JFrame {
 	private JPanel contentPane;
 	private JButton btnVoltar;
 	private JButton btnEnviar;
-	private static JTextField textField_name;
-	private static JTextField textField_CPF;
-	private static JTextField textField_RG;
+	private JTextField textField_name;
+	private JTextField textField_CPF;
+	private JTextField textField_RG;
 	private JCheckBox checkBox_masculino;
 	private JCheckBox checkBox_feminino;
-	private static JTextField textField_dtNasc;
-	private static JTextField textField_rua;
-	private static JTextField textField_numero;
-	private static JTextField textField_bairro;
-	private static JTextField textField_comp;
-	private static JTextField textField_cidade;
-	private static JTextField textField_CEP;
-	private static JTextField textField_dtAdClinica;
-	private static JTextField textField_nrCarteiraTrabalho;
-	private static JTextField textField_usuario;
-	private static JTextField textField_senha;
-	private static JTextField textField_CRM;
-	private static JTextField textField_vlConsultPriva;
-	private static JTextField textField_vlConsultaPlano;
-	private static JTextField textField_Especialidade;
+	private JTextField textField_dtNasc;
+	private JTextField textField_rua;
+	private JTextField textField_numero;
+	private JTextField textField_bairro;
+	private JTextField textField_comp;
+	private JTextField textField_cidade;
+	private JTextField textField_CEP;
+	private JTextField textField_dtAdClinica;
+	private JTextField textField_nrCarteiraTrabalho;
+	private JTextField textField_usuario;
+	private JTextField textField_senha;
+	private JTextField textField_CRM;
+	private JTextField textField_vlConsultPriva;
+	private JTextField textField_vlConsultaPlano;
+	private JTextField textField_Especialidade;
 	
 	private String CheckBox;
 	
@@ -173,6 +174,7 @@ public class CadastroMedico extends JFrame {
 		
 		btnEnviar = new JButton("Enviar");
 		btnEnviar.setBounds(58, 784, 89, 23);
+		btnEnviar.addActionListener(tratador);
 		panel.add(btnEnviar);
 		
 		btnVoltar = new JButton("Voltar");
@@ -298,33 +300,35 @@ public class CadastroMedico extends JFrame {
 				frame.setVisible(true);
 			}
 			if(e.getSource() == btnEnviar) {
-				String nome = CadastroMedico.textField_name.getText();
-				String cpf = CadastroMedico.textField_CPF.getText();
-				String rg = CadastroMedico.textField_RG.getText();
-				String dtNasc = CadastroMedico.textField_dtNasc.getText();
-				String rua = CadastroMedico.textField_rua.getText();
-				String numero = CadastroMedico.textField_numero.getText();
-				String bairro = CadastroMedico.textField_bairro.getText();
-				String comp = CadastroMedico.textField_comp.getText();
-				String cidade = CadastroMedico.textField_cidade.getText();
-				String cep = CadastroMedico.textField_CEP.getText();
-				String crm = CadastroMedico.textField_CRM.getText();
-				String vlConsultaPrivado = CadastroMedico.textField_vlConsultPriva.getText();
+				String nome = textField_name.getText();
+				String cpf = textField_CPF.getText();
+				String rg = textField_RG.getText();
+				String dtNasc = textField_dtNasc.getText();
+				String rua = textField_rua.getText();
+				int numero = Integer.parseInt(textField_numero.getText());
+				String bairro = textField_bairro.getText();
+				String comp = textField_comp.getText();
+				String cidade = textField_cidade.getText();
+				int cep = Integer.parseInt(textField_CEP.getText());
+				String crm = textField_CRM.getText();
+				String vlConsultaPrivado = textField_vlConsultPriva.getText();
 				float vlConPrivado = Float.parseFloat(vlConsultaPrivado);
-				String vlConsultaPlano = CadastroMedico.textField_vlConsultaPlano.getText();
+				String vlConsultaPlano = textField_vlConsultaPlano.getText();
 				float vlConPlano = Float.parseFloat(vlConsultaPlano);
 				ArrayList<String> Especialidades = new ArrayList<String>();
-				Especialidades.add(CadastroMedico.textField_Especialidade.getText());
-				String dtAdClinica = CadastroMedico.textField_dtAdClinica.getText();
-				String nrCarteiraTrabalho = CadastroMedico.textField_nrCarteiraTrabalho.getText();
+				Especialidades.add(textField_Especialidade.getText());
+				String dtAdClinica = textField_dtAdClinica.getText();
+				String nrCarteiraTrabalho = textField_nrCarteiraTrabalho.getText();
 				int nrCarTrab = Integer.parseInt(nrCarteiraTrabalho);
-				String usuario = CadastroMedico.textField_usuario.getText();
-				String senha = CadastroMedico.textField_senha.getText();
+				String usuario = textField_usuario.getText();
+				String senha = textField_senha.getText();
 				
-				//criar o objeto 
+				Endereco end = new Endereco(rua, numero, comp, bairro, cep, cidade);
+				
 				Medico m = new Medico(nome, cpf, rg, CheckBox, dtAdClinica, dtNasc, nrCarTrab,
 						usuario, senha, crm, Especialidades, 0, vlConPrivado, 
 						vlConPlano);
+				m.setEndereco(end);
 				Codigo.DadosFuncionarios.cadastrar(m);
 				
 			}
