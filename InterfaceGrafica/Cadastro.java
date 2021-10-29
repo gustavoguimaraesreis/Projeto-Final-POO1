@@ -1,15 +1,18 @@
 package InterfaceGrafica;
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-
+import java.awt.FlowLayout;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.UIManager;
 
 public class Cadastro extends JFrame {
 
@@ -19,12 +22,13 @@ public class Cadastro extends JFrame {
 	private JButton btnPacienteSemPlano;
 	private JButton btnMedico;
 	private JButton btnOutrosFunc;
+	private JButton btnServicoExtra;
+	private JLabel lblNewLabel_3;
 	
 
 	public Cadastro() {
-		setTitle("Cadastrar");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 688, 300);
+		setBounds(100, 100, 1141, 386);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -35,7 +39,7 @@ public class Cadastro extends JFrame {
 		
 		JLabel lblNewLabel = new JLabel("O que deseja cadastrar?");
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNewLabel.setBounds(222, 23, 248, 36);
+		lblNewLabel.setBounds(452, 11, 248, 36);
 		contentPane.add(lblNewLabel);
 		
 		btnPacienteComPlano = new JButton("Paciente com Plano");
@@ -70,8 +74,18 @@ public class Cadastro extends JFrame {
 		
 		botaoVoltar = new JButton("Voltar para a tela principal");
 		botaoVoltar.addActionListener(tratador);
-		botaoVoltar.setBounds(243, 229, 204, 23);
+		botaoVoltar.setBounds(439, 293, 204, 23);
 		contentPane.add(botaoVoltar);
+		
+		lblNewLabel_3 = new JLabel("Servi\u00E7os Extras");
+		lblNewLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblNewLabel_3.setBounds(827, 80, 171, 14);
+		contentPane.add(lblNewLabel_3);
+		
+		btnServicoExtra = new JButton("Adcionar Servi\u00E7os");
+		btnServicoExtra.setBounds(797, 120, 165, 23);
+		btnServicoExtra.addActionListener(tratador);
+		contentPane.add(btnServicoExtra);
 	}
 	
 	private class TrataBotoes implements ActionListener {
@@ -96,6 +110,11 @@ public class Cadastro extends JFrame {
 			if(e.getSource() == btnOutrosFunc) {
 				CadastroOutrosFunc frame = new CadastroOutrosFunc();
 				frame.setVisible(true);
+			}
+			if(e.getSource() == btnServicoExtra) {
+				CadastroServicoExtra frame = new CadastroServicoExtra();
+				frame.setVisible(true);
+				
 			}
 			Cadastro.this.dispose();
 		}
