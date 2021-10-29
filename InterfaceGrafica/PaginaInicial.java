@@ -111,6 +111,12 @@ public class PaginaInicial extends JFrame {
 			}else if(e.getSource() == btnBonificacaoDeAniversario){
 				BonificacaoDeAniversario page = new BonificacaoDeAniversario();
 				page.setVisible(true);
+			}else if(e.getSource() == btnCalcularSalario){
+				CalcularSalario page = new CalcularSalario();
+				page.setVisible(true);
+			}else if(e.getSource() == btnRealizarConsulta){
+				RealizarConsulta page = new RealizarConsulta();
+				page.setVisible(true);
 			}
 			dispose();
 		}

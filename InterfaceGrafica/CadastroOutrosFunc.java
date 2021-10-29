@@ -1,6 +1,5 @@
 package InterfaceGrafica;
 import Codigo.DemaisFuncionarios;
-import Codigo.DadosFuncionarios;
 import Codigo.Endereco;
 import javax.swing.*;
 import java.awt.*;
@@ -34,9 +33,9 @@ public class CadastroOutrosFunc extends JFrame {
 	
 	private String CheckBox_sexo;
 	private JTextField textField_RG;
-
 	
 	public CadastroOutrosFunc() {
+		setTitle("Cadastrar - Demais Funcionarios");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 700, 710);
 		contentPane = new JPanel();

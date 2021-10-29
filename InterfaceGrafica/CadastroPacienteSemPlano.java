@@ -32,12 +32,12 @@ public class CadastroPacienteSemPlano extends JFrame {
 
 	private String CheckBox;
 	private String CheckBox_EstadoCivil;
-	private String dtCadastro = "hoje";
-	private String dtUltimaConsulta = "ainda não fez nenhuma consulta";
+	private String dtCadastro = "Hoje";
+	private String dtUltimaConsulta = "Ainda não fez nenhuma consulta.";
 	private JLabel lblNewLabel_14;
-	
 
 	public CadastroPacienteSemPlano() {
+		setTitle("Cadastrar - Paciente sem Plano");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 615, 663);
 		contentPane = new JPanel();

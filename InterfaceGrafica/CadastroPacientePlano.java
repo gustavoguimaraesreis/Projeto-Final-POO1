@@ -1,10 +1,8 @@
 package InterfaceGrafica;
-import Codigo.Paciente;
+
 import Codigo.Endereco;
 import Codigo.DadosPacientes;
 import Codigo.PacienteComPlano;
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -12,11 +10,9 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 import java.awt.Color;
 import javax.swing.JLabel;
-import javax.swing.JComboBox;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JTextField;
-import javax.swing.JTextArea;
 import java.awt.SystemColor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -49,11 +45,12 @@ public class CadastroPacientePlano extends JFrame {
 	
 	private String CheckBox;
 	private String CheckBox_EstadoCivil;
-	private String dtCadastro = "hoje"; //teste(não sei pegar a data atual(pesquisar import.JavaDate)
-	private String dtUltimaConsulta = "ainda não fez nenhuma consulta";
+	private String dtCadastro = "Hoje"; //teste(não sei pegar a data atual(pesquisar import.JavaDate)
+	private String dtUltimaConsulta = "Ainda não fez nenhuma consulta";
 	private boolean CheckBox_pCarencia = false;
 	
 	public CadastroPacientePlano() {
+		setTitle("Cadastrar - Paciente com Plano");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 615, 600);
 		contentPane = new JPanel();

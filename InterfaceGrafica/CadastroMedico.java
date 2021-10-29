@@ -1,8 +1,6 @@
 package InterfaceGrafica;
 import Codigo.Medico;
 import Codigo.Endereco;
-import Codigo.PlanodeSaude;
-import Codigo.DadosFuncionarios;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -40,9 +38,8 @@ public class CadastroMedico extends JFrame {
 	
 	private String CheckBox;
 	
-
-	
 	public CadastroMedico() {
+		setTitle("Cadastrar - Medico");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 700, 900);
 		contentPane = new JPanel();

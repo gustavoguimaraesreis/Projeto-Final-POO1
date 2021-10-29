@@ -33,6 +33,16 @@ public class MostrarDados extends JFrame {
 
         TrataBotoes tratador = new TrataBotoes(O);
 
+        btnVisualizarEndereco = new JButton("Visualizar Endereço");
+        contentPane.add(btnVisualizarEndereco);
+        btnVisualizarEndereco.addActionListener(tratador);
+
+        btnVoltar = new JButton("Voltar");
+        btnVoltar.setBackground(Color.RED);
+        btnVoltar.setForeground(Color.WHITE);
+        btnVoltar.addActionListener(tratador);
+        contentPane.add(btnVoltar);
+
         if(O instanceof Pessoas){
             this.type = "P";
             setBounds(100, 100, 400, 650);
@@ -92,6 +102,8 @@ public class MostrarDados extends JFrame {
                 panelW[0].add(lblDataDaUltima);
 
                 if(O instanceof PacienteComPlano){
+                    btnVisualizarEndereco.setBounds(27, 560, 205, 25);
+                    btnVoltar.setBounds(246, 560, 123, 25);
 
                     panelW[1] = new JPanel();
                     panelW[1].setLayout(null);
@@ -127,20 +139,10 @@ public class MostrarDados extends JFrame {
                     lblPeriodoDeCarencia.setBounds(12, 85, 315, 15);
                     panelW[1].add(lblPeriodoDeCarencia);
         
-                    btnVisualizarEndereco = new JButton("Visualizar Endereço");
-                    btnVisualizarEndereco.setBounds(27, 560, 205, 25);
-                    contentPane.add(btnVisualizarEndereco);
-                    btnVisualizarEndereco.addActionListener(tratador);
-            
-                    btnVoltar = new JButton("Voltar");
-                    btnVoltar.setBounds(246, 560, 123, 25);
-                    btnVoltar.setBackground(Color.RED);
-                    btnVoltar.setForeground(Color.WHITE);
-                    btnVoltar.addActionListener(tratador);
-                    contentPane.add(btnVoltar);
-        
                 }else if(O instanceof PacienteSemPlano){
                     setBounds(100, 100, 400, 610);
+                    btnVisualizarEndereco.setBounds(27, 530, 205, 25);
+                    btnVoltar.setBounds(246, 530, 125, 25);
 
                     panelW[1] = new JPanel();
                     panelW[1].setLayout(null);
@@ -168,18 +170,7 @@ public class MostrarDados extends JFrame {
                     JLabel lblValor = new JLabel("Valor da ultima consulta: " + ((PacienteSemPlano) O).getDataUltimaConsulta());
                     lblValor.setBounds(12, 50, 315, 15);
                     panelW[1].add(lblValor);
-        
-                    btnVisualizarEndereco = new JButton("Visualizar Endereço");
-                    btnVisualizarEndereco.setBounds(27, 530, 205, 25);
-                    contentPane.add(btnVisualizarEndereco);
-                    btnVisualizarEndereco.addActionListener(tratador);
-            
-                    btnVoltar = new JButton("Voltar");
-                    btnVoltar.setBounds(246, 530, 125, 25);
-                    btnVoltar.setBackground(Color.RED);
-                    btnVoltar.setForeground(Color.WHITE);
-                    btnVoltar.addActionListener(tratador);
-                    contentPane.add(btnVoltar);
+
                 }
             }else if(O instanceof Funcionario){
                 this.type = "F";
@@ -204,6 +195,9 @@ public class MostrarDados extends JFrame {
                 panelW[0].add(lblSenha);
 
                 if(O instanceof DemaisFuncionarios){
+                    btnVisualizarEndereco.setBounds(27, 576, 205, 25);
+                    btnVoltar.setBounds(246, 576, 125, 25);
+
                     panelW[1] = new JPanel();
                     panelW[1].setLayout(null);
                     panelW[1].setBackground(Color.WHITE);
@@ -230,21 +224,11 @@ public class MostrarDados extends JFrame {
                     JLabel lblCargo = new JLabel("Cargo: " + ((DemaisFuncionarios) O).getCargo());
                     lblCargo.setBounds(12, 50, 315, 15);
                     panelW[1].add(lblCargo);
-        
-                    btnVisualizarEndereco = new JButton("Visualizar Endereço");
-                    btnVisualizarEndereco.setBounds(27, 576, 205, 25);
-                    contentPane.add(btnVisualizarEndereco);
-                    btnVisualizarEndereco.addActionListener(tratador);
-            
-                    btnVoltar = new JButton("Voltar");
-                    btnVoltar.setBounds(246, 576, 125, 25);
-                    btnVoltar.setBackground(Color.RED);
-                    btnVoltar.setForeground(Color.WHITE);
-                    btnVoltar.addActionListener(tratador);
-                    contentPane.add(btnVoltar);
 
                 }else if(O instanceof Medico){
                     setBounds(100, 100, 400, 710);
+                    btnVisualizarEndereco.setBounds(27, 635, 205, 25);
+                    btnVoltar.setBounds(246, 635, 125, 25);
 
                     panelW[1] = new JPanel();
                     panelW[1].setLayout(null);
@@ -280,18 +264,7 @@ public class MostrarDados extends JFrame {
                     JLabel lblValorDaConsultaPrivada = new JLabel("Valor da consulta privada: " + ((Medico) O).getValorConsulta_privado());
                     lblValorDaConsultaPrivada.setBounds(12, 120, 315, 15);
                     panelW[1].add(lblValorDaConsultaPrivada);
-        
-                    btnVisualizarEndereco = new JButton("Visualizar Endereço");
-                    btnVisualizarEndereco.setBounds(27, 635, 205, 25);
-                    contentPane.add(btnVisualizarEndereco);
-                    btnVisualizarEndereco.addActionListener(tratador);
-            
-                    btnVoltar = new JButton("Voltar");
-                    btnVoltar.setBounds(246, 635, 125, 25);
-                    btnVoltar.setBackground(Color.RED);
-                    btnVoltar.setForeground(Color.WHITE);
-                    btnVoltar.addActionListener(tratador);
-                    contentPane.add(btnVoltar);
+
                 }
             }
 
@@ -299,6 +272,7 @@ public class MostrarDados extends JFrame {
             this.type = "C";
             setTitle("Buscar - Consulta Encontrada");
             setBounds(100, 100, 600, 450);
+            btnVoltar.setBounds(225, 375, 125, 25);
 
             panelW[0] = new JPanel();
             panelW[0].setBounds(27, 58, 561, 295);
@@ -350,15 +324,9 @@ public class MostrarDados extends JFrame {
             JLabel lblFuncionarioAgendou = new JLabel("Funcionario que agendou: " + ((Consulta) O).getFuncionarioAgendou().getNome());
             lblFuncionarioAgendou.setBounds(12, 260, 637, 15);
             panelW[0].add(lblFuncionarioAgendou);
-    
-            btnVoltar = new JButton("Voltar");
-            btnVoltar.setBounds(225, 375, 125, 25);
-            btnVoltar.setBackground(Color.RED);
-            btnVoltar.setForeground(Color.WHITE);
-            btnVoltar.addActionListener(tratador);
-            contentPane.add(btnVoltar);
 
         }else if(O instanceof ServicosExtras){
+            btnVoltar.setBounds(170, 196, 125, 25);
             this.type = "SE";
             setTitle("Buscar - Serviço Encontrado");
             setBounds(100, 100, 335, 270);
@@ -382,24 +350,18 @@ public class MostrarDados extends JFrame {
             lblDadosDoServiço.setFont(new Font("Dialog", Font.BOLD, 18));
             panelB[0].add(lblDadosDoServiço);
         
-            JLabel lblNome = new JLabel("Nome: ");
+            JLabel lblNome = new JLabel("Nome: " + ((ServicosExtras) O).getNome());
             lblNome.setBounds(12, 15, 285, 15);
             panelW[0].add(lblNome);
             
-            JLabel lblTipo = new JLabel("Tipo: ");
+            JLabel lblTipo = new JLabel("Tipo: " + ((ServicosExtras) O).getTipo());
             lblTipo.setBounds(12, 50, 285, 15);
             panelW[0].add(lblTipo);
             
-            JLabel lblValorDoServiço = new JLabel("Valor do serviço: " );
+            JLabel lblValorDoServiço = new JLabel("Valor do serviço: " + ((ServicosExtras) O).getValorServico());
             lblValorDoServiço.setBounds(12, 85, 285, 15);
             panelW[0].add(lblValorDoServiço);
-    
-            btnVoltar = new JButton("Voltar");
-            btnVoltar.setBounds(170, 196, 125, 25);
-            btnVoltar.setBackground(Color.RED);
-            btnVoltar.setForeground(Color.WHITE);
-            btnVoltar.addActionListener(tratador);
-            contentPane.add(btnVoltar);
+
         }
     }
 

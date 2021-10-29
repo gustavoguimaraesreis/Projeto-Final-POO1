@@ -65,7 +65,7 @@ public class BuscarDados extends JFrame {
             JLabel lblInformeAbaixo = new JLabel("Informe, abaixo, a data da consulta que deseja buscar:");
             lblInformeAbaixo.setBounds(20, 12, 440, 15);
             contentPane.add(lblInformeAbaixo);
-                JLabel lblInformeAbaixo_1 = new JLabel("Informe, abaixo, o horario da consulta que deseja buscar:");
+            JLabel lblInformeAbaixo_1 = new JLabel("Informe, abaixo, o horario da consulta que deseja buscar:");
 		    lblInformeAbaixo_1.setBounds(20, 70, 440, 15);
 		    contentPane.add(lblInformeAbaixo_1);
             textField_1 = new JTextField();

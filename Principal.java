@@ -18,7 +18,7 @@ import java.util.*;
 import InterfaceGrafica.PaginaInicial;
 public class Principal {
 	public static void main(String[] args) {
-
+		
 		PaginaInicial page = new PaginaInicial();
 		page.setVisible(true);
 	}
@@ -40,7 +40,7 @@ Gustavo.setEndereco(e);
 ArrayList<String> especialidades = new ArrayList<String>();
 String aux = "Cardiologista";
 especialidades.add(aux);
-DemaisFuncionarios Gabriel1 = new DemaisFuncionarios("Gabriel C. B. de S. Amaral", "03890153186", "2277604410", "Masculino", "28/10/2021", "16/05/2002", 123456789, "gcbsa", "gabriel123", 1700, "Atendente");
+DemaisFuncionarios Gabriel1 = new DemaisFuncionarios("Gabriel C. B. de S. Amaral", "04432538627", "2277604410", "Masculino", "28/10/2021", "16/05/2002", 123456789, "gcbsa", "gabriel123", 1700, "Atendente");
 Medico Gustavo1 = new Medico("Gustavo Guimarães Reis", "12058687639", "123456789", "Masculino", "28/10/2021", "23/12/2001", 987654321, "GustavoGuimaraes", "gustavo123", "18266324", especialidades, 54, 250, 85, planos);
 Gabriel1.setEndereco(e);
 Gustavo1.setEndereco(e);
@@ -59,4 +59,5 @@ DadosFuncionarios.cadastrar(Gustavo1);
 DadosConsulta.cadastrar(c);
 DadosServicosExtras.cadastrar(se);
 //Fim dos testes
+
 */

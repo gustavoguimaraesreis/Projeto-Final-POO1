@@ -77,18 +77,18 @@ public class BonificacaoDeAniversario extends JFrame {
 
                     if(P instanceof Paciente){
                         check = ((Paciente) P).bonificacaoAniversarial(textField_1.getText());
-                        if(check == true) JOptionPane.showMessageDialog(null, "Parabêns! Chegou o seu aniversario e você ganhou 50% de desconto para uma sessão em qualquer um de nossos serviços extras. Consulte os nossos serviços na aba 'Buscar'.", "Bonificação de Aniversario", JOptionPane.INFORMATION_MESSAGE);
-                        else JOptionPane.showMessageDialog(null, "O aniversario do paciente em questão ainda não chegou!", "Sem Bonificação de Aniversario", JOptionPane.INFORMATION_MESSAGE);
+                        if(check == true) JOptionPane.showMessageDialog(null, "Parabêns! Chegou o seu aniversario e você ganhou 50% de desconto para uma sessão em qualquer um de nossos serviços extras. Consulte os nossos serviços na aba 'Buscar'.", "Bonificação de Aniversario", JOptionPane.PLAIN_MESSAGE);
+                        else JOptionPane.showMessageDialog(null, "O aniversario do paciente em questão ainda não chegou!", "Sem Bonificação de Aniversario", JOptionPane.PLAIN_MESSAGE);
                     
                     }else if(P instanceof DemaisFuncionarios){
                         check = ((DemaisFuncionarios) P).bonificacaoAniversarial(textField_1.getText());
-                        if(check == true)JOptionPane.showMessageDialog(null, "Parabêns! Chegou o seu aniversario e você ganhou uma sessão gratuita para qualquer um de nossos serviços extras. Consulte os nossos serviços na aba 'Buscar'.", "Bonificação de Aniversario", JOptionPane.INFORMATION_MESSAGE);
-                        else JOptionPane.showMessageDialog(null, "O aniversario do funcionário em questão ainda não chegou!", "Sem Bonificação de Aniversario", JOptionPane.INFORMATION_MESSAGE);
+                        if(check == true)JOptionPane.showMessageDialog(null, "Parabêns! Chegou o seu aniversario e você ganhou uma sessão gratuita para qualquer um de nossos serviços extras. Consulte os nossos serviços na aba 'Buscar'.", "Bonificação de Aniversario", JOptionPane.PLAIN_MESSAGE);
+                        else JOptionPane.showMessageDialog(null, "O aniversario do funcionário em questão ainda não chegou!", "Sem Bonificação de Aniversario", JOptionPane.PLAIN_MESSAGE);
                    
                     }else if(P instanceof Medico){
                         check = ((Medico) P).bonificacaoAniversarial(textField_1.getText());
-                        if(check == true)JOptionPane.showMessageDialog(null, "Parabêns! Chegou o seu aniversario e você ganhou uma sessão gratuita para qualquer um de nossos serviços extras, além de poder trazer o seu cônjuge junto. Consulte os nossos serviços na aba 'Buscar'.", "Bonificação de Aniversario", JOptionPane.INFORMATION_MESSAGE);
-                        else JOptionPane.showMessageDialog(null, "O aniversario do médico em questão ainda não chegou!", "Sem Bonificação de Aniversario", JOptionPane.INFORMATION_MESSAGE);
+                        if(check == true)JOptionPane.showMessageDialog(null, "Parabêns! Chegou o seu aniversario e você ganhou uma sessão gratuita para qualquer um de nossos serviços extras, além de poder trazer o seu cônjuge junto. Consulte os nossos serviços na aba 'Buscar'.", "Bonificação de Aniversario", JOptionPane.PLAIN_MESSAGE);
+                        else JOptionPane.showMessageDialog(null, "O aniversario do médico em questão ainda não chegou!", "Sem Bonificação de Aniversario", JOptionPane.PLAIN_MESSAGE);
 
                     }
                 }else JOptionPane.showMessageDialog(null, "Nenhuma pessoa cadastrada com este CPF foi encontrada em nosso sistema!", "Erro", JOptionPane.ERROR_MESSAGE);
