@@ -252,6 +252,8 @@ public class CadastroPacienteSemPlano extends JFrame {
 
 				p.setEndereco(end);
 				Codigo.DadosPacientes.cadastrar(p);
+
+				JOptionPane.showMessageDialog(null, "Paciente Cadastrado com Sucesso!", "Cadastro", JOptionPane.INFORMATION_MESSAGE);
 			}
 		}
 	}

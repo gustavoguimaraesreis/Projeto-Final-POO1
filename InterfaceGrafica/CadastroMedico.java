@@ -329,6 +329,7 @@ public class CadastroMedico extends JFrame {
 				m.setEndereco(end);
 				Codigo.DadosFuncionarios.cadastrar(m);
 				
+				JOptionPane.showMessageDialog(null, "Medico Cadastrado com Sucesso!", "Cadastro", JOptionPane.INFORMATION_MESSAGE);
 			}
 		}
 	}

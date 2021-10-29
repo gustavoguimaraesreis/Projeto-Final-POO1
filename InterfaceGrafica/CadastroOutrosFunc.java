@@ -302,6 +302,7 @@ public class CadastroOutrosFunc extends JFrame {
 				df.setEndereco(end);
 				Codigo.DadosFuncionarios.cadastrar(df);
 				
+				JOptionPane.showMessageDialog(null, "Funcionário Cadastrado com Sucesso!", "Cadastro", JOptionPane.INFORMATION_MESSAGE);
 			}
 		}
 	}

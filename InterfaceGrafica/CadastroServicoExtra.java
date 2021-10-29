@@ -102,6 +102,7 @@ public class CadastroServicoExtra extends JFrame {
 				ServicosExtras se = new ServicosExtras(nome, tipo, valor);
 				DadosServicosExtras.cadastrar(se);
 				
+                JOptionPane.showMessageDialog(null, "Serviço Extra Cadastrado com Sucesso!", "Cadastro", JOptionPane.INFORMATION_MESSAGE);
 			}
 		}
 	}
