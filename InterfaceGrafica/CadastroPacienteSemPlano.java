@@ -169,10 +169,12 @@ public class CadastroPacienteSemPlano extends JFrame {
 		btnEnviar.setBounds(36, 465, 89, 23);
 		btnEnviar.addActionListener(tratador);
 		panel.add(btnEnviar);
-		
+
 		btnVoltar = new JButton("Voltar");
+		btnVoltar.setForeground(Color.WHITE);
+		btnVoltar.setBackground(Color.RED);
 		btnVoltar.setBounds(441, 440, 89, 23);
-		btnVoltar.addActionListener(tratador);
+        btnVoltar.addActionListener(tratador);
 		panel.add(btnVoltar);
 		
 		JLabel lblNewLabel_10 = new JLabel("Desconto: ");
@@ -253,7 +255,11 @@ public class CadastroPacienteSemPlano extends JFrame {
 				p.setEndereco(end);
 				Codigo.DadosPacientes.cadastrar(p);
 
-				JOptionPane.showMessageDialog(null, "Paciente Cadastrado com Sucesso!", "Cadastro", JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(null, "Paciente Cadastrado com Sucesso!", "Cadastro", JOptionPane.PLAIN_MESSAGE);
+
+				PaginaInicial frame = new PaginaInicial();
+				frame.setVisible(true);
+				dispose();
 			}
 		}
 	}

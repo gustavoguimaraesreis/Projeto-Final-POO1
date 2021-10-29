@@ -21,7 +21,6 @@ public class MostrarDados extends JFrame {
     private JPanel[] panelW = new JPanel[2];
     private JPanel[] panelB = new JPanel[2];
 	private JButton btnVoltar, btnVisualizarEndereco;
-    private String type;
 
 	MostrarDados(Object O) {
 
@@ -44,7 +43,6 @@ public class MostrarDados extends JFrame {
         contentPane.add(btnVoltar);
 
         if(O instanceof Pessoas){
-            this.type = "P";
             setBounds(100, 100, 400, 650);
             
             panelW[0] = new JPanel();
@@ -173,7 +171,6 @@ public class MostrarDados extends JFrame {
 
                 }
             }else if(O instanceof Funcionario){
-                this.type = "F";
                 setTitle("Buscar - Funcionario Encontrado");
 
                 panelW[0].setBounds(27, 58, 342, 330);
@@ -267,9 +264,7 @@ public class MostrarDados extends JFrame {
 
                 }
             }
-
         }else if(O instanceof Consulta){
-            this.type = "C";
             setTitle("Buscar - Consulta Encontrada");
             setBounds(100, 100, 600, 450);
             btnVoltar.setBounds(225, 375, 125, 25);
@@ -326,10 +321,9 @@ public class MostrarDados extends JFrame {
             panelW[0].add(lblFuncionarioAgendou);
 
         }else if(O instanceof ServicosExtras){
-            btnVoltar.setBounds(170, 196, 125, 25);
-            this.type = "SE";
             setTitle("Buscar - Serviço Encontrado");
             setBounds(100, 100, 335, 270);
+            btnVoltar.setBounds(170, 196, 125, 25);
 
             panelW[0] = new JPanel();
             panelW[0].setBounds(27, 58, 270, 125);
@@ -375,8 +369,8 @@ public class MostrarDados extends JFrame {
 
         public void actionPerformed (ActionEvent e){
             if(e.getSource() == btnVoltar){
-                BuscarDados pg = new BuscarDados(type);
-                pg.setVisible(true);
+                PaginaInicial pg = new PaginaInicial();
+				pg.setVisible(true);
 				dispose();
             }else if(e.getSource() == btnVisualizarEndereco){
 				VisualizarEndereco pg = new VisualizarEndereco((Pessoas) O);

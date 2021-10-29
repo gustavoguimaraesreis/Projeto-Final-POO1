@@ -1,14 +1,13 @@
 package InterfaceGrafica;
+
 import Codigo.Medico;
 import Codigo.Endereco;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.util.ArrayList;
-
 import javax.swing.border.*;
-
-
+import java.util.ArrayList;
 
 public class CadastroMedico extends JFrame {
 
@@ -175,8 +174,10 @@ public class CadastroMedico extends JFrame {
 		panel.add(btnEnviar);
 		
 		btnVoltar = new JButton("Voltar");
+		btnVoltar.setForeground(Color.WHITE);
+		btnVoltar.setBackground(Color.RED);
 		btnVoltar.setBounds(504, 784, 89, 23);
-		btnVoltar.addActionListener(tratador);
+        btnVoltar.addActionListener(tratador);
 		panel.add(btnVoltar);
 		
 		JPanel panel_2 = new JPanel();
@@ -329,7 +330,11 @@ public class CadastroMedico extends JFrame {
 				m.setEndereco(end);
 				Codigo.DadosFuncionarios.cadastrar(m);
 				
-				JOptionPane.showMessageDialog(null, "Medico Cadastrado com Sucesso!", "Cadastro", JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(null, "Medico Cadastrado com Sucesso!", "Cadastro", JOptionPane.PLAIN_MESSAGE);
+
+				PaginaInicial frame = new PaginaInicial();
+				frame.setVisible(true);
+				dispose();
 			}
 		}
 	}

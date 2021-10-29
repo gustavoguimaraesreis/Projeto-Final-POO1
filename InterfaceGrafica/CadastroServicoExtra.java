@@ -1,22 +1,12 @@
 package InterfaceGrafica;
+
 import Codigo.ServicosExtras;
 import Codigo.DadosServicosExtras;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
-import javax.swing.JTextField;
-import javax.swing.border.LineBorder;
-import java.awt.Color;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.border.*;
 
 public class CadastroServicoExtra extends JFrame {
 
@@ -78,8 +68,10 @@ public class CadastroServicoExtra extends JFrame {
 		contentPane.add(btnEnviar);
 		
 		btnVoltar = new JButton("Voltar");
+		btnVoltar.setForeground(Color.WHITE);
+		btnVoltar.setBackground(Color.RED);
 		btnVoltar.setBounds(292, 267, 89, 23);
-		btnVoltar.addActionListener(tratador);
+        btnVoltar.addActionListener(tratador);
 		contentPane.add(btnVoltar);
 		
 		JLabel lblNewLabel = new JLabel("Adicicionar Servi\u00E7o Extra");
@@ -102,7 +94,11 @@ public class CadastroServicoExtra extends JFrame {
 				ServicosExtras se = new ServicosExtras(nome, tipo, valor);
 				DadosServicosExtras.cadastrar(se);
 				
-                JOptionPane.showMessageDialog(null, "Serviço Extra Cadastrado com Sucesso!", "Cadastro", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Serviço Extra Cadastrado com Sucesso!", "Cadastro", JOptionPane.PLAIN_MESSAGE);
+
+				PaginaInicial frame = new PaginaInicial();
+				frame.setVisible(true);
+				dispose();
 			}
 		}
 	}

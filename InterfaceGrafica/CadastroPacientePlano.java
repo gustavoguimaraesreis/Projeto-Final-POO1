@@ -4,20 +4,10 @@ import Codigo.Endereco;
 import Codigo.DadosPacientes;
 import Codigo.PacienteComPlano;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.border.LineBorder;
-import java.awt.Color;
-import javax.swing.JLabel;
-import javax.swing.JButton;
-import javax.swing.JCheckBox;
-import javax.swing.JTextField;
-import java.awt.SystemColor;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.border.*;
 
 public class CadastroPacientePlano extends JFrame {
 
@@ -223,8 +213,10 @@ public class CadastroPacientePlano extends JFrame {
 		panel.add(btnEnviar);
 		
 		btnVoltar = new JButton("Voltar");
+		btnVoltar.setForeground(Color.WHITE);
+		btnVoltar.setBackground(Color.RED);
 		btnVoltar.setBounds(472, 502, 89, 23);
-		btnVoltar.addActionListener(tratador);
+        btnVoltar.addActionListener(tratador);
 		panel.add(btnVoltar);
 		
 		JLabel lblNewLabel_17 = new JLabel("RG: ");
@@ -296,7 +288,6 @@ public class CadastroPacientePlano extends JFrame {
 				int nrCart = Integer.parseInt(nr_cart);
 				String dtIngresso = textField_dtIngresso.getText();
 				
-				
 				Endereco end = new Endereco(rua, numero, comp, bairro, cep, cidade);
 				PacienteComPlano p = new PacienteComPlano(nome, cpf, rg, CheckBox, CheckBox_EstadoCivil,
 						dtNasc, dtCadastro, dtUltimaConsulta, nrCart, dtIngresso, CheckBox_pCarencia);
@@ -304,11 +295,11 @@ public class CadastroPacientePlano extends JFrame {
 				p.setEndereco(end);
 				DadosPacientes.cadastrar(p);
 				
-				
-				
-				
-				
-				
+				JOptionPane.showMessageDialog(null, "Paciente Cadastrado com Sucesso!", "Cadastro", JOptionPane.PLAIN_MESSAGE);
+
+				PaginaInicial frame = new PaginaInicial();
+				frame.setVisible(true);
+				dispose();
 			}
 		}
 	}

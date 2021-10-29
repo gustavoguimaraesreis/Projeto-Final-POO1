@@ -107,6 +107,10 @@ public class RemoverDados extends JFrame {
                 
                 if(Aux != null) JOptionPane.showMessageDialog(null, "Item removido com sucesso!", "Removido", JOptionPane.INFORMATION_MESSAGE);  
                 else JOptionPane.showMessageDialog(null, "Nenhum resultado encontrado!", "Erro", JOptionPane.ERROR_MESSAGE);
+
+                PaginaInicial frame = new PaginaInicial();
+				frame.setVisible(true);
+				dispose();
 			}
         }
     }

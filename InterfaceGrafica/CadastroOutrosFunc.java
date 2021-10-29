@@ -1,12 +1,12 @@
 package InterfaceGrafica;
+
 import Codigo.DemaisFuncionarios;
 import Codigo.Endereco;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.border.*;
-
-
 
 public class CadastroOutrosFunc extends JFrame {
 
@@ -169,10 +169,12 @@ public class CadastroOutrosFunc extends JFrame {
 		btnEnviar.setBounds(68, 609, 89, 23);
 		btnEnviar.addActionListener(tratador);
 		panel.add(btnEnviar);
-		
+
 		btnVoltar = new JButton("Voltar");
+		btnVoltar.setForeground(Color.WHITE);
+		btnVoltar.setBackground(Color.RED);
 		btnVoltar.setBounds(441, 609, 89, 23);
-		btnVoltar.addActionListener(tratador);
+        btnVoltar.addActionListener(tratador);
 		panel.add(btnVoltar);
 		
 		JPanel panel_2 = new JPanel();
@@ -302,7 +304,11 @@ public class CadastroOutrosFunc extends JFrame {
 				df.setEndereco(end);
 				Codigo.DadosFuncionarios.cadastrar(df);
 				
-				JOptionPane.showMessageDialog(null, "Funcionário Cadastrado com Sucesso!", "Cadastro", JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(null, "Funcionário Cadastrado com Sucesso!", "Cadastro", JOptionPane.PLAIN_MESSAGE);
+
+				PaginaInicial frame = new PaginaInicial();
+				frame.setVisible(true);
+				dispose();
 			}
 		}
 	}

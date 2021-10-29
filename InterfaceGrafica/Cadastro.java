@@ -1,18 +1,9 @@
 package InterfaceGrafica;
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-
-import java.awt.FlowLayout;
-import javax.swing.JLabel;
-import java.awt.Font;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import javax.swing.UIManager;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.border.*;
 
 public class Cadastro extends JFrame {
 
@@ -28,7 +19,7 @@ public class Cadastro extends JFrame {
 
 	public Cadastro() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1141, 386);
+		setBounds(100, 100, 1040, 386);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -39,7 +30,7 @@ public class Cadastro extends JFrame {
 		
 		JLabel lblNewLabel = new JLabel("O que deseja cadastrar?");
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNewLabel.setBounds(452, 11, 248, 36);
+		lblNewLabel.setBounds(418, 11, 248, 36);
 		contentPane.add(lblNewLabel);
 		
 		btnPacienteComPlano = new JButton("Paciente com Plano");
@@ -71,10 +62,12 @@ public class Cadastro extends JFrame {
 		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		lblNewLabel_2.setBounds(488, 80, 105, 14);
 		contentPane.add(lblNewLabel_2);
-		
-		botaoVoltar = new JButton("Voltar para a tela principal");
-		botaoVoltar.addActionListener(tratador);
-		botaoVoltar.setBounds(439, 293, 204, 23);
+
+		botaoVoltar = new JButton("Voltar");
+		botaoVoltar.setForeground(Color.WHITE);
+		botaoVoltar.setBackground(Color.RED);
+		botaoVoltar.setBounds(425, 293, 204, 23);
+        botaoVoltar.addActionListener(tratador);
 		contentPane.add(botaoVoltar);
 		
 		lblNewLabel_3 = new JLabel("Servi\u00E7os Extras");
